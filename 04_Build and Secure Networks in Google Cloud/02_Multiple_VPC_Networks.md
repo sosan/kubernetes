@@ -446,110 +446,68 @@ Create the **managementnet-us-vm** instance using the Cloud Console.
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>managementnet-us-vm</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>Zone</td>
-
     <td>us-central1-c</td>
-
     </tr>
-
     <tr>
-
     <td>Series</td>
-
     <td>N1</td>
-
     </tr>
-
     <tr>
-
     <td>Machine type</td>
-
     <td>1 vCPU (f1-micro)</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
-4.  Click **Management, security, disks, networking, sole tenancy**.
+1.  Click **Management, security, disks, networking, sole tenancy**.
 
-5.  Click **Networking**.
+2.  Click **Networking**.
 
-6.  For **Network interfaces**, click the pencil icon to edit.
+3.  For **Network interfaces**, click the pencil icon to edit.
 
-7.  Set the following values, leave all other values at their defaults:
+4.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>managementnet</td>
-
     </tr>
-
     <tr>
-
     <td>Subnetwork</td>
-
     <td>managementsubnet-us</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
-8.  Click **Done**.
+5.  Click **Done**.
 
-9.  Click **command line**.
+6.  Click **command line**.
 
     This illustrate that VM instances can also be created using the Cloud Shell command line. You will create the **privatenet-us-vm** instance using these commands with similar parameters.
 
-10.  Click **Close**.
+7.   Click **Close**.
 
-11.  Click **Create**.
+8.   Click **Create**.
 
 #### Test Completed Task
 

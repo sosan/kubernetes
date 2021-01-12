@@ -2,8 +2,6 @@
 
 <div class="lab-preamble__details subtitle-headline-1"><span>1 hour</span> <span>7 Credits</span>
 
-<div class="lab__rating">[](/focuses/1232/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
 </div>
 
 </div>
@@ -29,15 +27,10 @@ In this lab, you configure an HTTP Load Balancer with global backends, as shown 
 In this lab, you learn how to perform the following tasks:
 
 *   Create HTTP and health check firewall rules
-
 *   Configure two instance templates
-
 *   Create two managed instance groups
-
 *   Configure an HTTP Load Balancer with IPv4 and IPv6
-
 *   Stress test an HTTP Load Balancer
-
 *   Denylist an IP address to restrict access to an HTTP Load Balancer
 
 ## Setup and requirements
@@ -108,75 +101,40 @@ Create a firewall rule to allow HTTP traffic to the backends.
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>default-allow-http</td>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>default</td>
-
     </tr>
-
     <tr>
-
     <td>Targets</td>
-
     <td>Specified target tags</td>
-
     </tr>
-
     <tr>
-
     <td>Target tags</td>
-
     <td>http-server</td>
-
     </tr>
-
     <tr>
-
     <td>Source filter</td>
-
     <td>IP Ranges</td>
-
     </tr>
-
     <tr>
-
     <td>Source IP ranges</td>
-
     <td>0.0.0.0/0</td>
-
     </tr>
-
     <tr>
-
     <td>Protocols and ports</td>
-
     <td>Specified protocols and ports, and then _check_ tcp, _type:_ 80</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>Make sure to include the **/0** in the **Source IP ranges** to specify all networks.</ql-infobox>
@@ -192,75 +150,40 @@ Health checks determine which instances of a load balancer can receive new conne
 2.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>default-allow-health-check</td>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>default</td>
-
     </tr>
-
     <tr>
-
     <td>Targets</td>
-
     <td>Specified target tags</td>
-
     </tr>
-
     <tr>
-
     <td>Target tags</td>
-
     <td>http-server</td>
-
     </tr>
-
     <tr>
-
     <td>Source filter</td>
-
     <td>IP Ranges</td>
-
     </tr>
-
     <tr>
-
     <td>Source IP ranges</td>
-
     <td>`130.211.0.0/22`, `35.191.0.0/16`</td>
-
     </tr>
-
     <tr>
-
     <td>Protocols and ports</td>
-
     <td>Specified protocols and ports, and then _check_ tcp</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
     <ql-infobox>Make sure to enter the two **Source IP ranges** one-by-one and pressing SPACE in between them.</ql-infobox>
@@ -290,27 +213,16 @@ An instance template is an API resource that you use to create VM instances and 
 1.  Under **Metadata**, specify the following:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Key</th>
-
     <th>Value</th>
-
     </tr>
-
     <tr>
-
     <td>startup-script-url</td>
-
     <td>gs://cloud-training/gcpnet/httplb/startup.sh</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>The `startup-script-url` specifies a script that executes when instances are started. This script installs Apache and changes the welcome page to include the client IP and the name, region, and zone of the VM instance. Feel free to explore this script [here](https://storage.googleapis.com/cloud-training/gcpnet/httplb/startup.sh).</ql-infobox>
@@ -320,43 +232,24 @@ An instance template is an API resource that you use to create VM instances and 
 2.  For **Network interfaces**, set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>default</td>
-
     </tr>
-
     <tr>
-
     <td>Subnet</td>
-
     <td>default (us-east1)</td>
-
     </tr>
-
     <tr>
-
     <td>Network tags</td>
-
     <td>http-server</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>The network tag **http-server** ensures that the **HTTP** and **Health Check** firewall rules apply to these instances.</ql-infobox>
@@ -391,91 +284,48 @@ Create a managed instance group in **us-east1** and one in **europe-west1**.
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>us-east1-mig</td>
-
     </tr>
-
     <tr>
-
     <td>Location</td>
-
     <td>Multiple zones</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-east1</td>
-
     </tr>
-
     <tr>
-
     <td>Instance template</td>
-
     <td>us-east1-template</td>
-
     </tr>
-
     <tr>
-
     <td>Autoscaling > Autoscaling metrics > Click Pencil icon > Metric type</td>
-
     <td>CPU utilization</td>
-
     </tr>
-
     <tr>
-
     <td>Target CPU utilization</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Minimum number of instances</td>
-
     <td>1</td>
-
     </tr>
-
     <tr>
-
     <td>Maximum number of instances</td>
-
     <td>5</td>
-
     </tr>
-
     <tr>
-
     <td>Cool-down period</td>
-
     <td>45</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>Managed instance groups offer **autoscaling** capabilities that allow you to automatically add or remove instances from a managed instance group based on increases or decreases in load. Autoscaling helps your applications gracefully handle increases in traffic and reduces cost when the need for resources is lower. You just define the autoscaling policy and the autoscaler performs automatic scaling based on the measured load.</ql-infobox>
@@ -491,91 +341,48 @@ Now repeat the same procedure for create a second instance group for **europe-we
 2.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>europe-west1-mig</td>
-
     </tr>
-
     <tr>
-
     <td>Location</td>
-
     <td>Multiple zones</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>europe-west1</td>
-
     </tr>
-
     <tr>
-
     <td>Instance template</td>
-
     <td>europe-west1-template</td>
-
     </tr>
-
     <tr>
-
     <td>Autoscaling > Autoscaling metrics > Click Pencil icon > Metric type</td>
-
     <td>CPU utilization</td>
-
     </tr>
-
     <tr>
-
     <td>Target CPU utilization</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Minimum number of instances</td>
-
     <td>1</td>
-
     </tr>
-
     <tr>
-
     <td>Maximum number of instances</td>
-
     <td>5</td>
-
     </tr>
-
     <tr>
-
     <td>Cool-down period</td>
-
     <td>45</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 3.  Click **Done**.
@@ -635,67 +442,36 @@ Backend services direct incoming traffic to one or more attached backends. Each 
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>http-backend</td>
-
     </tr>
-
     <tr>
-
     <td>Instance group</td>
-
     <td>us-east1-mig</td>
-
     </tr>
-
     <tr>
-
     <td>Port numbers</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Balancing mode</td>
-
     <td>Rate</td>
-
     </tr>
-
     <tr>
-
     <td>Maximum RPS</td>
-
     <td>50</td>
-
     </tr>
-
     <tr>
-
     <td>Capacity</td>
-
     <td>100</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>This configuration means that the load balancer attempts to keep each instance of **us-east1-mig** at or below 50 requests per second (RPS).</ql-infobox>
@@ -707,59 +483,32 @@ Backend services direct incoming traffic to one or more attached backends. Each 
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Instance group</td>
-
     <td>europe-west1-mig</td>
-
     </tr>
-
     <tr>
-
     <td>Port numbers</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Balancing mode</td>
-
     <td>Utilization</td>
-
     </tr>
-
     <tr>
-
     <td>Maximum backend utilization</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Capacity</td>
-
     <td>100</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>This configuration means that the load balancer attempts to keep each instance of **europe-west1-mig** at or below 80% CPU utilization.</ql-infobox>
@@ -772,43 +521,24 @@ Backend services direct incoming traffic to one or more attached backends. Each 
 1.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>http-health-check</td>
-
     </tr>
-
     <tr>
-
     <td>Protocol</td>
-
     <td>TCP</td>
-
     </tr>
-
     <tr>
-
     <td>Port</td>
-
     <td>80</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 <ql-infobox>Health checks determine which instances receive new connections. This HTTP health check polls instances every 5 seconds, waits up to 5 seconds for a response and treats 2 successful or 2 failed attempts as healthy or unhealthy, respectively.</ql-infobox>

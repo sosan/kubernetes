@@ -4,8 +4,6 @@
 
 <div class="lab-preamble__details subtitle-headline-1"><span>1 hour</span> <span>9 Credits</span>
 
-<div class="lab__rating">[](/focuses/10603/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
 </div>
 
 </div>
@@ -79,11 +77,8 @@ You need to complete the following tasks:
 Some Jooli Inc. standards you should follow:
 
 *   Create all resources in the `us-east1` region and `us-east1-b` zone, unless otherwise directed.
-
 *   Use the project VPCs.
-
 *   Naming is normally _team-resource_, e.g. an instance could be named **kraken-webserver1**.
-
 *   Allocate cost effective resource sizes. Projects are monitored and excessive resource use will result in the containing project's termination (and possibly yours), so beware. This is the guidance the monitoring team is willing to share: unless directed, use `n1-standard-1`.
 
 ### Your challenge
@@ -107,7 +102,7 @@ Create a VPC called `griffin-dev-vpc` with the following subnets only:
 
 Click _Check my progress_ to verify the objective. <ql-activity-tracking step="1">Create development VPC manually</ql-activity-tracking>
 
-<ql-warningbox>If you don't get a green check mark, click on the **Score** fly-out on the top right and click **Run Step** on the relevant step. A hint pop up opens to give you advice.</ql-warningbox>
+If you don't get a green check mark, click on the **Score** fly-out on the top right and click **Run Step** on the relevant step. A hint pop up opens to give you advice.</ql-warningbox>
 
 ### Task 2: Create production VPC using Deployment Manager
 
@@ -129,7 +124,7 @@ Click _Check my progress_ to verify the objective. <ql-activity-tracking step="3
 
 ### Task 4: Create and configure Cloud SQL Instance
 
-Create a **MySQL Cloud SQL Instance** called `griffin-dev-db` in us-east1\. Connect to the instance and run the following SQL commands to prepare the **WordPress** environment:
+Create a **MySQL Cloud SQL Instance** called `griffin-dev-db` in `us-east1`. Connect to the instance and run the following SQL commands to prepare the **WordPress** environment:
 
     CREATE DATABASE wordpress;
     GRANT ALL PRIVILEGES ON wordpress.* TO "wp_user"@"%" IDENTIFIED BY "stormwind_rules";

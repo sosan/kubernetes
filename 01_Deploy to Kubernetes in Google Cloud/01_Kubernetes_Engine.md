@@ -2,8 +2,6 @@
 
 <div class="lab-preamble__details subtitle-headline-1"><span>30 minutes</span> <span>1 Credit</span>
 
-<div class="lab__rating">[](/focuses/878/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
 </div>
 
 </div>
