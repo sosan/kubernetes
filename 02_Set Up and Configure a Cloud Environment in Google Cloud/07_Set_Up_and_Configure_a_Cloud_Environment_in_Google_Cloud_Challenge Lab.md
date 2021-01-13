@@ -157,7 +157,7 @@ Add the following secrets and volume to the cluster using `wp-env.yaml`. Make su
 You also need to provide a key for a service account that was already set up. This service account provides access to the database for a sidecar container. Use the command below to create the key, and then add the key to the Kubernetes environment.
 
     gcloud iam service-accounts keys create key.json \
-        --iam-account=cloud-sql-proxy@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com
+        --iam-account=cloud-sql-proxy@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com && \
     kubectl create secret generic cloudsql-instance-credentials \
         --from-file key.json
 
