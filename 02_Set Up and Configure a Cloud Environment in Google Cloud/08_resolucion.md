@@ -52,14 +52,6 @@ gcloud compute firewall-rules create allow-internal-ports-22-3389 \
   --allow tcp:22,tcp:3389,icmp
 ```
 
-============ quitar ===============
-
-gcloud compute firewall-rules create fw-ssh-dev --source-ranges=0.0.0.0/0 --target-tags ssh --allow=tcp:22 --network=griffin-dev-vpc
-
-gcloud compute firewall-rules create fw-ssh-prod --source-ranges=0.0.0.0/0 --target-tags ssh --allow=tcp:22 --network=griffin-prod-vpc
-
-============================
-
 ## compobar si se han creado los networks
 ```
 gcloud compute networks list
@@ -125,8 +117,6 @@ gcloud beta compute instances create bastion \
 
 
 
-
-
 ## crear sql instancia
 
 > databases > sql
@@ -135,12 +125,6 @@ gcloud beta compute instances create bastion \
 ```
 gcloud sql instances create griffin-dev-db --root-password='dkja")#("$54545sdfjs)"#$'
 ```
-
-gcloud services enable servicenetworking.googleapis.com \
-  --project=$PROJECT_ID
-
-<!-- gcloud services enable servicenetworking.googleapis.com --project=$PROJECT_ID -->
-
 
 nombre: `griffin-dev-db`
 contraseña: `dkja")#("$54545sdfjs)"#$`
