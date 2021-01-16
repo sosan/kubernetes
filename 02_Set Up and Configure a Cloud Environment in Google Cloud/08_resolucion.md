@@ -36,22 +36,6 @@ gcloud compute networks subnets create griffin-dev-mgmt --range=192.168.32.0/20 
 ```
 
 
-## creacion de las reglas firewall
-
-```
-gcloud compute firewall-rules create allow-griffin-dev-vpc \
-  --network griffin-dev-vpc \
-  --allow tcp,udp,icmp \
-  --target-tags ssh \
-  --source-ranges 192.168.16.0/20,192.168.32.0/20
-```
-```
-gcloud compute firewall-rules create allow-internal-ports-22-3389 \
-  --network griffin-dev-vpc \
-  --target-tags ssh \
-  --allow tcp:22,tcp:3389,icmp
-```
-
 ## compobar si se han creado los networks
 ```
 gcloud compute networks list
@@ -95,25 +79,24 @@ gcloud deployment-manager deployments create prod-network --config prod-network.
 ## create bastion host
 
 ```
-gcloud beta compute instances create bastion \
-  --zone=us-east1-b \
+gcloud compute instances create bastion \
   --network-interface=network=griffin-dev-vpc,subnet=griffin-dev-mgmt \
   --network-interface=network=griffin-prod-vpc,subnet=griffin-prod-mgmt \
   --tags=ssh \
-  --machine-type=n1-standard-1 \
-  --network-tier=STANDARD \
-  --maintenance-policy=MIGRATE \
-  --scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append \
-  --image=debian-10-buster-v20201216 \
-  --image-project=debian-cloud \
-  --boot-disk-size=10GB \
-  --boot-disk-type=pd-standard \
-  --boot-disk-device-name=bastion-host \
-  --no-shielded-secure-boot \
-  --shielded-vtpm \
-  --shielded-integrity-monitoring \
-  --reservation-affinity=any
+  --zone=us-east1-b
 ```
+
+
+## creacion de las reglas firewall
+
+```
+gcloud compute firewall-rules create ssh-dev --source-ranges=0.0.0.0/0 --target-tags ssh --allow=tcp:22 --network=griffin-dev-vpc
+```
+
+```
+gcloud compute firewall-rules create ssh-prod --source-ranges=0.0.0.0/0 --target-tags ssh --allow=tcp:22 --network=griffin-prod-vpc
+```
+
 
 
 
@@ -199,8 +182,8 @@ kubectl get persistentVolume
 ```
 
 ```
-
-gcloud iam service-accounts keys create key.json --iam-account=$PROJECT_ID@$PROJECT_ID.iam.gserviceaccount.com
+gcloud iam service-accounts keys create key.json \
+  --iam-account=cloud-sql-proxy@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com
 ```
 
 ```
@@ -223,3 +206,17 @@ kubectl create -f wp-deployment.yaml
 ```
 kubectl create -f wp-service.yaml
 ```
+
+
+## Crear uptime check
+
+> Ir uptime check del dashboard
+> 
+
+**Title**: wordpress
+
+**Protocol**: HTTP
+
+**Resource Type**: URL
+
+**Applies to**: IP_LOAD_BALANCING
