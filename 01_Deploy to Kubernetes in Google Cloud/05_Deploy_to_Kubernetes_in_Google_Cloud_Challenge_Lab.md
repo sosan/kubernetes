@@ -169,8 +169,10 @@ Remember with Jenkins:
 
 *   Connect to the Jenkins console using the commands below (but make sure you don't have a running container `docker ps`; if you do, kill it):
 
+```
     export POD_NAME=$(kubectl get pods --namespace default -l "app.kubernetes.io/component=jenkins-master" -l "app.kubernetes.io/instance=cd" -o jsonpath="{.items[0].metadata.name}")
     kubectl port-forward $POD_NAME 8080:8080 >> /dev/null &
+```
 
 *   Setup your credentials to use **Google Service Account from metadata**.
 *   Create a pipeline job that points to your `*/master` branch on your source code.
