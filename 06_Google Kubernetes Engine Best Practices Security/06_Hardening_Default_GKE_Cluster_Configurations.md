@@ -1,14 +1,6 @@
 # Hardening Default GKE Cluster Configurations
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour 30 minutes</span> <span>9 Credits</span>
-
-<div class="lab__rating">[](/focuses/5158/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 30 minutes 9 Credits
 
 ## GSP496
 
@@ -138,9 +130,9 @@ You can list the project ID with this command:
 ### Create a simple GKE cluster
 
 1.  Set a zone into an environment variable called MY_ZONE. This lab is using `us-central1-a`, you can select a [zone](https://cloud.google.com/compute/docs/regions-zones/) if you prefer:
-
+```
     export MY_ZONE=us-central1-a
-
+```
 1.  Run this to start a Kubernetes cluster managed by Kubernetes Engine named `simplecluster` and configure it to run 2 nodes:
 
     gcloud container clusters create simplecluster --zone $MY_ZONE --num-nodes 2 --metadata=disable-legacy-endpoints=false
