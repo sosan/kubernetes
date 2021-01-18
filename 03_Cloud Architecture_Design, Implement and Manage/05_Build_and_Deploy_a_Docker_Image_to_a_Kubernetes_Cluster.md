@@ -1,14 +1,6 @@
 # Build and Deploy a Docker Image to a Kubernetes Cluster
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour 30 minutes</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1738/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 30 minutes 7 Credits
 
 ## GSP304
 
@@ -134,7 +126,7 @@ To test the deployment, you need to download the sample application, then build 
 
 With the image prepared you can then create a Kubernetes cluster, then deploy the sample application to the cluster.
 
-<ql-infobox>**Note:** In order to ensure accurate lab activity tracking you must use `echo-app` as the container repository image name, call your Kubernetes cluster `echo-cluster`, create the Kubernetes cluster in `us-central1-a` zone and use `echo-web` for the deployment name.</ql-infobox>
+**Note:** In order to ensure accurate lab activity tracking you must use `echo-app` as the container repository image name, call your Kubernetes cluster `echo-cluster`, create the Kubernetes cluster in `us-central1-a` zone and use `echo-web` for the deployment name.
 
 ### Create a Kubernetes Cluster
 
