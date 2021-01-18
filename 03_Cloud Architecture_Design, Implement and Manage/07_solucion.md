@@ -1,4 +1,3 @@
-
 ```
 export ZONE=us-central1-a
 ```
@@ -10,14 +9,13 @@ gcloud sql instances create wordpress && \
     --gce-zone $ZONE
 ```
 ```
-gcloud sql users set-password && \
-    --host % root && \
-    --instance wordpress && \
-    --password Password1*
+gcloud sql users set-password --host % root  --instance wordpress --password Password1*
 ```
 ```
-export ADDRESS=[External ip/32]>
+export ADDRESS=$(gcloud compute instances describe blog --format="value(networkInterfaces.accessConfigs.natIP)" | sed "s/\['//g" | sed "s/'\]//g")/32
+echo $ADDRESS
 ```
+
 ```
 gcloud sql instances patch wordpress && \
     --authorized-networks $ADDRESS && \
@@ -32,8 +30,7 @@ gcloud compute ssh blog --zone=us-central1-a
 MYSQL_IP=$(gcloud sql instances describe wordpress --format="value(ipAddresses.ipAddress)")
 ```
 ```
-mysql --host=[INSTANCE_IP_ADDR] \
-    --user=root --password
+mysql --host=$MYSQL_IP --user=root --password
 ```
 ```
 CREATE DATABASE wordpress;
@@ -41,7 +38,9 @@ CREATE USER 'blogadmin'@'%' IDENTIFIED BY 'Password1*';
 GRANT ALL PRIVILEGES ON wordpress.* TO 'blogadmin'@'%';
 FLUSH PRIVILEGES;
 ```
-
+```
+exit
+```
 ```
 sudo mysqldump -u root -pPassword1* wordpress > wordpress_backup.sql
 ```
@@ -59,3 +58,5 @@ cd /var/www/html/wordpress
 ```
 sudo nano wp-config.php
 ```
+
+cambiar db_host por la $ADDRESS
