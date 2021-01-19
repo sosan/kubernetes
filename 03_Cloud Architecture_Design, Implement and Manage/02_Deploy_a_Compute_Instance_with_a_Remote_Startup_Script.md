@@ -1,14 +1,6 @@
 # Deploy a Compute Instance with a Remote Startup Script
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour 30 minutes</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1735/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 30 minutes 7 Credits
 
 ## GSP301
 
@@ -134,7 +126,7 @@ A basic bash script that installs the Apache web server software called `install
 
 Configure a Linux Compute Engine instance that installs the Apache web server software using a remote startup script. In order to confirm that a compute instance Apache has successfully installed, the Compute Engine instance must be accessible via HTTP from the internet.
 
-<ql-infobox>**Note:** In order to ensure accurate activity tracking you should not modify or change any of the pre-created lab resources, in particular the lab-monitor Compute Engine instance.</ql-infobox>
+**Note:** In order to ensure accurate activity tracking you should not modify or change any of the pre-created lab resources, in particular the lab-monitor Compute Engine instance.
 
 ### Tips and Tricks
 

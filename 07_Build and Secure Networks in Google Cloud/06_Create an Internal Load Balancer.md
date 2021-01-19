@@ -489,84 +489,47 @@ An instance template is an API resource that you can use to create VM instances 
 2.  Under **Metadata**, specify the following:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Key</th>
-
     <th>Value</th>
-
     </tr>
-
     <tr>
-
     <td>startup-script-url</td>
-
     <td>gs://cloud-training/gcpnet/ilb/startup.sh</td>
-
     </tr>
-
     </tbody>
-
     </table>
-
-<aside class="special">
 
 The **startup-script-url** specifies a script that will be executed when instances are started. This script installs Apache and changes the welcome page to include the client IP and the name, region and zone of the VM instance. Feel free to explore this script [here](https://storage.googleapis.com/cloud-training/gcpnet/ilb/startup.sh).
 
-</aside>
 
 1.  Click **Networking**.
 
 2.  For **Network interfaces**, set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>my-internal-app</td>
-
     </tr>
-
     <tr>
-
     <td>Subnetwork</td>
-
     <td>subnet-a</td>
-
     </tr>
-
     <tr>
-
     <td>Network tags</td>
-
     <td>lb-backend</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
-<aside class="special">
-
 The network tag **lb-backend** ensures that the **HTTP** and **Health Check** firewall rules apply to these instances.
-
-</aside>
 
 1.  Click **Create**.
 
@@ -595,106 +558,55 @@ Create a managed instance group in **subnet-a** (us-central1-a) and one **subnet
 2.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>instance-group-1</td>
-
     </tr>
-
     <tr>
-
     <td>Location</td>
-
     <td>Single-zone</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>Zone</td>
-
     <td>us-central1-a</td>
-
     </tr>
-
     <tr>
-
     <td>Instance template</td>
-
     <td>instance-template-1</td>
-
     </tr>
-
     <tr>
-
     <td>Autoscaling > Autoscaling metrics > Click Pencil icon > Metric type</td>
-
     <td>CPU utilization</td>
-
     </tr>
-
     <tr>
-
     <td>Target CPU utilization</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Minimum number of instances</td>
-
     <td>1</td>
-
     </tr>
-
     <tr>
-
     <td>Maximum number of instances</td>
-
     <td>5</td>
-
     </tr>
-
     <tr>
-
     <td>Cool-down period</td>
-
     <td>45</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
-<aside class="special">
-
 Managed instance groups offer **autoscaling** capabilities that allow you to automatically add or remove instances from a managed instance group based on increases or decreases in load. Autoscaling helps your applications gracefully handle increases in traffic and reduces cost when the need for resources is lower. You just define the autoscaling policy and the autoscaler performs automatic scaling based on the measured load.
-
-</aside>
 
 1.  Click **Create**.
 
@@ -705,99 +617,52 @@ Managed instance groups offer **autoscaling** capabilities that allow you to aut
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>instance-group-2</td>
-
     </tr>
-
     <tr>
-
     <td>Location</td>
-
     <td>Single-zone</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>Zone</td>
-
     <td>us-central1-b</td>
-
     </tr>
-
     <tr>
-
     <td>Instance template</td>
-
     <td>instance-template-2</td>
-
     </tr>
-
     <tr>
-
     <td>Autoscaling > Autoscaling metrics > Click Pencil icon > Metric type</td>
-
     <td>CPU utilization</td>
-
     </tr>
-
     <tr>
-
     <td>Target CPU utilization</td>
-
     <td>80</td>
-
     </tr>
-
     <tr>
-
     <td>Minimum number of instances</td>
-
     <td>1</td>
-
     </tr>
-
     <tr>
-
     <td>Maximum number of instances</td>
-
     <td>5</td>
-
     </tr>
-
     <tr>
-
     <td>Cool-down period</td>
-
     <td>45</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 4.  Click **Create**.
@@ -817,115 +682,62 @@ Verify that VM instances are being created in both subnets and create a utility 
 4.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>utility-vm</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>Zone</td>
-
     <td>us-central1-f</td>
-
     </tr>
-
     <tr>
-
     <td>Series</td>
-
     <td>N1</td>
-
     </tr>
-
     <tr>
-
     <td>Machine type</td>
-
     <td>f1-micro (1 shared vCPU)</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 5.  Click **Management, security, disks, networking, sole tenancy**.
-
 6.  Click **Networking**.
-
 7.  For **Network interfaces**, click the pencil icon to edit.
-
 8.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>my-internal-app</td>
-
     </tr>
-
     <tr>
-
     <td>Subnetwork</td>
-
     <td>subnet-a</td>
-
     </tr>
-
     <tr>
-
     <td>Primary internal IP</td>
-
     <td>Ephemeral (Custom)</td>
-
     </tr>
-
     <tr>
-
     <td>Custom ephemeral IP address</td>
-
     <td>10.10.20.50</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 9.  Click **Create**.
@@ -1005,43 +817,24 @@ The backend service monitors instance groups and prevents them from exceeding co
 2.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>my-internal-app</td>
-
     </tr>
-
     <tr>
-
-    <td>Instance group</td>
-
-    <td>instance-group-1 (us-central1-a)</td>
-
+   <td>Instance group</td>
+  <td>instance-group-1 (us-central1-a)</td>
     </tr>
-
     </tbody>
-
     </table>
 
 3.  Click **Add backend**.
@@ -1053,50 +846,27 @@ The backend service monitors instance groups and prevents them from exceeding co
 6.  Set the following values, leave all other values at their defaults:
 
     <table>
-
-    <tbody>
-
+   <tbody>
     <tr>
-
     <th>Property</th>
-
     <th>Value (select option as specified)</th>
-
     </tr>
-
     <tr>
-
-    <td>Name</td>
-
+  <td>Name</td>
     <td>my-ilb-health-check</td>
-
     </tr>
-
-    <tr>
-
+   <tr>
     <td>Protocol</td>
-
     <td>TCP</td>
-
     </tr>
-
-    <tr>
-
+   <tr>
     <td>Port</td>
-
     <td>80</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
-<aside class="special">
-
 Health checks determine which instances can receive new connections. This HTTP health check polls instances every 5 seconds, waits up to 5 seconds for a response and treats 2 successful or 2 failed attempts as healthy or unhealthy, respectively.
-
-</aside>
 
 1.  Click **Save and Continue**.
 
@@ -1111,77 +881,43 @@ The frontend forwards traffic to the backend.
 2.  Specify the following, leaving all other values with their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
-    <th>Property</th>
-
+   <th>Property</th>
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Subnetwork</td>
-
-    <td>subnet-b</td>
-
+   <td>subnet-b</td>
     </tr>
-
     <tr>
-
     <td>Internal IP</td>
-
     <td>Reserve a static internal IP address</td>
-
     </tr>
-
     </tbody>
-
-    </table>
+   </table>
 
 3.  Specify the following, leaving all other values with their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
-    <td>my-ilb-ip</td>
-
+   <td>my-ilb-ip</td>
     </tr>
-
     <tr>
-
     <td>Static IP address</td>
-
     <td>Let me choose</td>
-
     </tr>
-
     <tr>
-
     <td>Custom IP address</td>
-
-    <td>10.10.30.5</td>
-
+   <td>10.10.30.5</td>
     </tr>
-
     </tbody>
-
     </table>
 
 4.  Click **Reserve**.
@@ -1261,101 +997,3 @@ For information on the basic concepts of Load Balancing, see [Google Cloud Load 
 ##### Lab Last Tested January 14, 2021
 
 Copyright 2020 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
-
-</div>
-
-</div>
-
-<div class="hidden js-end-lab-button-container lab-content__end-lab-button"><ql-lab-control-button class="js-end-lab-button" running=""></ql-lab-control-button></div>
-
-<div class="lab-content__renderable-instructions">
-
-<div class="lab-content__recommendation">
-
-<section class="upcoming-cards">
-
-## Continue questing
-
-<div class="content-card-grid">
-
-<div class="card-content-wrapper js-content-card" data-id="1034" data-level="Advanced" data-name="Create an Internal Load Balancer" data-type="Lab">[
-
-<div class="card__body">
-
-<div class="overline card--content__type">Lab</div>
-
-### Create an Internal Load Balancer
-
-<div class="card--content__description body-1">
-
-In this lab, you create two managed instance groups in the same region. Then, you configure an Internal Load Balancer with the instances groups as the backends.
-
-</div>
-
-</div>
-
-<div class="card__footer">
-
-<div class="card__footer__left"><span>Advanced</span></div>
-
-</div>
-
-](/focuses/1250?parent=catalog&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</div>
-
-</section>
-
-</div>
-
-</div>
-
-</ql-drawer-content><ql-drawer end="" id="outline-drawer" open="" slot="drawer" width="320">
-
-<div class="js-lab-content-outline lab-content__outline">[GSP216](#step1)[Overview](#step2)[Setup and requirements](#step3)[Configure HTTP and health check firewall rules](#step4)[Configure instance templates and create instance groups](#step5)[Configure the Internal Load Balancer](#step6)[Test the Internal Load Balancer](#step7)[Congratulations!](#step8)</div>
-
-</ql-drawer></ql-drawer-container></ql-drawer-content></ql-drawer-container>
-
-<div class="lab-introduction js-lab-introduction is-hidden">
-
-<div class="lab-introduction__inner">
-
-# Welcome to Your First Lab!
-
-<ql-icon-button class="js-skip-button">close</ql-icon-button>
-
-<div class="lab-introduction__video"><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="https://www.youtube.com/embed/yF7EDXKTmoQ?enablejsapi=1&amp;rel=0&amp;showinfo=0"></iframe></div>
-
-<a class="js-skip-button button button--outline">Skip this video</a></div>
-
-</div>
-
-</div>
-
-</main>
-
-<div class="modal fade" id="lab-details-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<div class="modal-body">
-
-In this lab, you create two managed instance groups in the same region. Then, you configure an Internal Load Balancer with the instances groups as the backends.
-
-This lab is included in these quests: [Networking in the Google Cloud](/quests/31?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) , [Build and Secure Networks in Google Cloud](/quests/128?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle). If you complete this lab you'll receive credit for it when you enroll in one of these quests.
-
-**Duration:** 1m setup · 50m access · 50m completion
-
-<span>**Levels:** advanced</span>
-
-**Permalink:** [https://google.qwiklabs.com/catalog_lab/1034](https://google.qwiklabs.com/catalog_lab/1034)
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Got It</a></div>
-
-</div>
-
-</div>

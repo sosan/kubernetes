@@ -310,7 +310,7 @@ For this lab Cloud Storage will provide working space for your Cloud Dataflow pi
 
 Click **Check my progress** to verify your performed task. If you have successfully created a Cloud Storage bucket, you will see an assessment score.
 
-<ql-activity-tracking step="5">Create a Cloud Storage Bucket</ql-activity-tracking>
+Create a Cloud Storage Bucket
 
 ## Set up a Cloud Dataflow Pipeline
 

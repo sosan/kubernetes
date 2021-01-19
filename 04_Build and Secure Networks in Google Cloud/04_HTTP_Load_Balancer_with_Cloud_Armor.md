@@ -137,7 +137,7 @@ Create a firewall rule to allow HTTP traffic to the backends.
     </tbody>
     </table>
 
-<ql-infobox>Make sure to include the **/0** in the **Source IP ranges** to specify all networks.</ql-infobox>
+Make sure to include the **/0** in the **Source IP ranges** to specify all networks.
 
 1.  Click **Create**.
 
@@ -186,7 +186,7 @@ Health checks determine which instances of a load balancer can receive new conne
     </tbody>
     </table>
 
-    <ql-infobox>Make sure to enter the two **Source IP ranges** one-by-one and pressing SPACE in between them.</ql-infobox>
+    Make sure to enter the two **Source IP ranges** one-by-one and pressing SPACE in between them.
 3.  Click **Create**.
 
 Click _Check my progress_ to verify the objective. <ql-activity-tracking step="1">Configure HTTP and health check firewall rules</ql-activity-tracking>
@@ -225,7 +225,7 @@ An instance template is an API resource that you use to create VM instances and 
     </tbody>
     </table>
 
-<ql-infobox>The `startup-script-url` specifies a script that executes when instances are started. This script installs Apache and changes the welcome page to include the client IP and the name, region, and zone of the VM instance. Feel free to explore this script [here](https://storage.googleapis.com/cloud-training/gcpnet/httplb/startup.sh).</ql-infobox>
+The `startup-script-url` specifies a script that executes when instances are started. This script installs Apache and changes the welcome page to include the client IP and the name, region, and zone of the VM instance. Feel free to explore this script [here](https://storage.googleapis.com/cloud-training/gcpnet/httplb/startup.sh).
 
 1.  Click **Networking**.
 
@@ -252,7 +252,7 @@ An instance template is an API resource that you use to create VM instances and 
     </tbody>
     </table>
 
-<ql-infobox>The network tag **http-server** ensures that the **HTTP** and **Health Check** firewall rules apply to these instances.</ql-infobox>
+The network tag **http-server** ensures that the **HTTP** and **Health Check** firewall rules apply to these instances.
 
 1.  Click **Create**.
 2.  Wait for the instance template to be created.
@@ -328,7 +328,7 @@ Create a managed instance group in **us-east1** and one in **europe-west1**.
     </tbody>
     </table>
 
-<ql-infobox>Managed instance groups offer **autoscaling** capabilities that allow you to automatically add or remove instances from a managed instance group based on increases or decreases in load. Autoscaling helps your applications gracefully handle increases in traffic and reduces cost when the need for resources is lower. You just define the autoscaling policy and the autoscaler performs automatic scaling based on the measured load.</ql-infobox>
+Managed instance groups offer **autoscaling** capabilities that allow you to automatically add or remove instances from a managed instance group based on increases or decreases in load. Autoscaling helps your applications gracefully handle increases in traffic and reduces cost when the need for resources is lower. You just define the autoscaling policy and the autoscaler performs automatic scaling based on the measured load.
 
 1.  Click **Done**.
 
@@ -411,7 +411,7 @@ Verify that VM instances are being created in both regions and access their HTTP
 
     ![backend.png](https://cdn.qwiklabs.com/cB4rkhddQchP1iTAc7xNeF5Bly34SwjtieR406NQM9w%3D)
 
-<ql-infobox>The **Hostname** and **Server Location** identifies where the HTTP Load Balancer sends traffic.</ql-infobox>
+The **Hostname** and **Server Location** identifies where the HTTP Load Balancer sends traffic.
 
 ## Configure the HTTP Load Balancer
 
@@ -474,7 +474,7 @@ Backend services direct incoming traffic to one or more attached backends. Each 
     </tbody>
     </table>
 
-<ql-infobox>This configuration means that the load balancer attempts to keep each instance of **us-east1-mig** at or below 50 requests per second (RPS).</ql-infobox>
+This configuration means that the load balancer attempts to keep each instance of **us-east1-mig** at or below 50 requests per second (RPS).
 
 1.  Click **Done**.
 
@@ -511,7 +511,7 @@ Backend services direct incoming traffic to one or more attached backends. Each 
     </tbody>
     </table>
 
-<ql-infobox>This configuration means that the load balancer attempts to keep each instance of **europe-west1-mig** at or below 80% CPU utilization.</ql-infobox>
+This configuration means that the load balancer attempts to keep each instance of **europe-west1-mig** at or below 80% CPU utilization.
 
 1.  Click **Done**.
 2.  For **Health Check**, select **Create a health check**.
@@ -541,7 +541,7 @@ Backend services direct incoming traffic to one or more attached backends. Each 
     </tbody>
     </table>
 
-<ql-infobox>Health checks determine which instances receive new connections. This HTTP health check polls instances every 5 seconds, waits up to 5 seconds for a response and treats 2 successful or 2 failed attempts as healthy or unhealthy, respectively.</ql-infobox>
+Health checks determine which instances receive new connections. This HTTP health check polls instances every 5 seconds, waits up to 5 seconds for a response and treats 2 successful or 2 failed attempts as healthy or unhealthy, respectively.
 
 1.  Click **Save and Continue**.
 2.  Click **Create** to create the backend service.
@@ -660,7 +660,7 @@ The host and path rules determine how your traffic will be directed. For example
 
 6.  Click **Done**.
 
-<ql-infobox>HTTP(S) load balancing supports both IPv4 and IPv6 addresses for client traffic. Client IPv6 requests are terminated at the global load balancing layer, then proxied over IPv4 to your backends.</ql-infobox>
+HTTP(S) load balancing supports both IPv4 and IPv6 addresses for client traffic. Client IPv6 requests are terminated at the global load balancing layer, then proxied over IPv4 to your backends.
 
 ### **Review and create the HTTP Load Balancer**
 
@@ -677,7 +677,7 @@ The host and path rules determine how your traffic will be directed. For example
 3.  Click on the name of the load balancer (**http-lb**).
 4.  Note the IPv4 and IPv6 addresses of the load balancer for the next task. They will be referred to as `[LB_IP_v4]` and `[LB_IP_v6]`, respectively.
 
-<ql-infobox>The IPv6 address is the one in hexadecimal format.</ql-infobox>
+The IPv6 address is the one in hexadecimal format.
 
 Click _Check my progress_ to verify the objective. <ql-activity-tracking step="3">Configure the HTTP Load Balancer</ql-activity-tracking>
 
@@ -691,7 +691,7 @@ Now that you created the HTTP Load Balancer for your backends, verify that traff
 
 To test IPv4 access to the HTTP Load Balancer, open a new tab in your browser and navigate to `http://[LB_IP_v4]`. Make sure to replace `[LB_IP_v4]` with the IPv4 address of the load balancer.
 
-<ql-infobox>It might take up to 5 minutes to access the HTTP Load Balancer. In the meantime, you might get a 404 or 502 error. Keep trying until you see the page of one of the backends.</ql-infobox> <ql-infobox>Depending on your proximity to **us-east1** and **europe-west1**, you traffic is either forwarded to a **us-east1-mig** or **europe-west1-mig** instance.</ql-infobox>
+It might take up to 5 minutes to access the HTTP Load Balancer. In the meantime, you might get a 404 or 502 error. Keep trying until you see the page of one of the backends. Depending on your proximity to **us-east1** and **europe-west1**, you traffic is either forwarded to a **us-east1-mig** or **europe-west1-mig** instance.
 
 If you have a local IPv6 address, try the IPv6 address of the HTTP Load Balancer by navigating to `http://[LB_IP_v6]`. Make sure to replace `[LB_IP_v6]` with the IPv6 address of the load balancer.
 
@@ -753,7 +753,7 @@ Create a new VM to simulate a load on the HTTP Load Balancer using `siege`. Then
 
     </table>
 
-<ql-infobox>Given that **us-west1** is closer to **us-east1** than to **europe-west1**, traffic should be forwarded only to **us-east1-mig** (unless the load is too high).</ql-infobox>
+Given that **us-west1** is closer to **us-east1** than to **europe-west1**, traffic should be forwarded only to **us-east1-mig** (unless the load is too high).
 
 1.  Click **Create**.
 
@@ -808,7 +808,7 @@ Create a Cloud Armor security policy with a denylist rule for the **siege-vm**.
 1.  In the Console, navigate to **Navigation menu** (![mainmenu.png](https://cdn.qwiklabs.com/QRLlvUpflhvp875q7fi7Mf%2FiVCqtMcM10Vfn0vwKZ%2B4%3D)) > **Compute Engine** > **VM instances**.
 2.  Note the **External IP** of the **siege-vm**. This will be referred to as `[SIEGE_IP]`.
 
-<ql-infobox>There are ways to identify the external IP address of a client trying to access your HTTP Load Balancer. For example, you could examine traffic captured by [VPC Flow Logs in BigQuery](https://cloud.google.com/vpc/docs/using-flow-logs#exporting_logs_to_bigquery_name_short_pubsub_name_short_and_custom_targets) to determine a high volume of incoming requests.</ql-infobox>
+There are ways to identify the external IP address of a client trying to access your HTTP Load Balancer. For example, you could examine traffic captured by [VPC Flow Logs in BigQuery](https://cloud.google.com/vpc/docs/using-flow-logs#exporting_logs_to_bigquery_name_short_pubsub_name_short_and_custom_targets) to determine a high volume of incoming requests.
 
 1.  In the Cloud Console, navigate to **Navigation menu** > **Network Security** > **Cloud Armor**.
 
@@ -918,7 +918,7 @@ Create a Cloud Armor security policy with a denylist rule for the **siege-vm**.
 
 13.  Click **Create policy**.
 
-<ql-infobox>Alternatively, you could set the default rule to **Deny** and only allowlist/allow traffic from authorized users/IP addresses.</ql-infobox>
+Alternatively, you could set the default rule to **Deny** and only allowlist/allow traffic from authorized users/IP addresses.
 
 1.  Wait for the policy to be created before moving to the next step.
 
@@ -939,11 +939,11 @@ The output should look like this (**do not copy; this is example output**):
     <!doctype html><meta charset="utf-8"><meta name=viewport content="width=device-width, initial-scale=1"><title>403</
     title>403 Forbidden
 
-<ql-infobox>It might take a couple of minutes for the security policy to take affect. If you are able to access the backends, keep trying until you get the **403 Forbidden error**.</ql-infobox>
+It might take a couple of minutes for the security policy to take affect. If you are able to access the backends, keep trying until you get the **403 Forbidden error**.
 
 1.  Open a new tab in your browser and navigate to `http://[LB_IP_v4]`. Make sure to replace `[LB_IP_v4]` with the IPv4 address of the load balancer.
 
-<ql-infobox>You can access the HTTP Load Balancer from your browser because of the default rule to **allow** traffic; however, you cannot access it from the **siege-vm** because of the **deny** rule that you implemented.</ql-infobox>
+You can access the HTTP Load Balancer from your browser because of the default rule to **allow** traffic; however, you cannot access it from the **siege-vm** because of the **deny** rule that you implemented.
 
 1.  Back in the SSH terminal of siege-vm, to simulate a load, run the following command:
 
@@ -975,7 +975,7 @@ The request should be from the **siege-vm** IP address. If not, expand another l
 
 ![query-results.png](https://cdn.qwiklabs.com/6Tg8NeDNW1atHww0aGfo4j90xzYQxpmuPovo11xb9Co%3D)
 
-<ql-infobox>Cloud Armor security policies create logs that can be explored to determine when traffic is denied and when it is allowed, along with the source of the traffic.</ql-infobox>
+Cloud Armor security policies create logs that can be explored to determine when traffic is denied and when it is allowed, along with the source of the traffic.
 
 ## Congratulations!
 

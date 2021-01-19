@@ -149,25 +149,19 @@ Create a Linux virtual machine, name it "Apache" and specify the zone as "us-cen
 
 While creating the Linux instance, make sure to apply the appropriate firewall rules so that potential customers can find your new product.
 
-Click **Check my progress** to verify the objective.
-
-<ql-activity-tracking step="1">Create a Compute Engine instance, add necessary firewall rules.</ql-activity-tracking>
+Click **Check my progress** to verify the objective. Create a Compute Engine instance, add necessary firewall rules
 
 #### Running a Basic Apache Web Server
 
 A virtual machine instance on Compute Engine can be controlled like any standard Linux server. Deploy a simple Apache web server (a placeholder for the new product site) to learn the basics of running a server on a virtual machine instance.
 
-Click **Check my progress** to verify the objective.
-
-<ql-activity-tracking step="2">Add Apache2 HTTP Server to your instance</ql-activity-tracking>
+Click **Check my progress** to verify the objective. <ql-activity-tracking step="2">Add Apache2 HTTP Server to your instance</ql-activity-tracking>
 
 #### Test Your Server
 
 Test that your instance is serving traffic on its external IP. You should see the "Hello World!" page (a placeholder for the new product site).
 
-Click **Check my progress** to verify the objective.
-
-<ql-activity-tracking step="3">Test your server</ql-activity-tracking>
+Click **Check my progress** to verify the objective. <ql-activity-tracking step="3">Test your server</ql-activity-tracking>
 
 #### **Troubleshooting**
 

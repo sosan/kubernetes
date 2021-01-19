@@ -208,71 +208,50 @@ Ensure that you are in the **Username 1** Cloud Console.
 
 2.  Click **Create bucket**.
 
-<aside>**Note**: If you get a permissions error for bucket creation, sign out and then sign in back in with the Username 1 credentials.</aside>
+**Note**: If you get a permissions error for bucket creation, sign out and then sign in back in with the Username 1 credentials.
 
 1.  Update the following fields, leave all others at their default values:
 
 <table>
-
 <tbody>
-
 <tr>
-
 <td colspan="1" rowspan="1">
 
 **Property**
-
 </td>
-
 <td colspan="1" rowspan="1">
 
 **Value**
-
 </td>
-
 </tr>
-
 <tr>
-
 <td colspan="1" rowspan="1">
 
 **Name**:
-
 </td>
 
 <td colspan="1" rowspan="1">
 
 _globally unique name (create it yourself!) and click **Continue**._
-
 </td>
-
 </tr>
-
 <tr>
-
 <td colspan="1" rowspan="1">
 
 **Location Type:**
-
 </td>
-
 <td colspan="1" rowspan="1">
-
 Multi-Region
-
 </td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 Note the bucket name. You will use it in a later step.
 
 1.  Click **Create.**
 
-<aside>**Note**: If you get a permissions error for bucket creation, sign out and then sign in back in with the Username 1 credentials.</aside>
+**Note**: If you get a permissions error for bucket creation, sign out and then sign in back in with the Username 1 credentials.
 
 ### **Upload a sample file**
 
@@ -316,7 +295,7 @@ Switch to the **Username 1** console.
 
 Notice that the user has disappeared from the list! The user has no access now.
 
-<aside>**Note**: It can take up to 80 seconds for such a change to take effect as it propagates. Read more [here](https://cloud.google.com/iam/docs/faq).</aside>
+**Note**: It can take up to 80 seconds for such a change to take effect as it propagates. Read more [here](https://cloud.google.com/iam/docs/faq)
 
 ### **Verify that Username 2 has lost access**
 
@@ -326,11 +305,10 @@ Notice that the user has disappeared from the list! The user has no access now.
 
 You should see a permission error.
 
-<aside>**Note**: As mentioned before, it can take up to 80 seconds for permissions to be revoked. If you haven't received a permission error, wait a 2 minutes and then try refreshing the console.</aside>
+**Note**: As mentioned before, it can take up to 80 seconds for permissions to be revoked. If you haven't received a permission error, wait a 2 minutes and then try refreshing the console.
 
 Click **Check my progress** to verify the objective.
-
-<ql-activity-tracking step="2">Remove project access</ql-activity-tracking>
+Remove project access
 
 ## Add Storage permissions
 
@@ -369,8 +347,7 @@ You should receive a similar output:
 1.  As you can see, you gave **Username 2** view access to the Cloud Storage bucket.
 
 Click **Check my progress** to verify the objective.
-
-<ql-activity-tracking step="3">Add Storage permissions</ql-activity-tracking>
+Add Storage permissions
 
 ## Congratulations!
 
@@ -395,5 +372,3 @@ This lab is also part of a series of labs called Qwik Starts. These labs are des
 ##### Lab last tested November 25, 2020
 
 Copyright 2020 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
-
-</div>
