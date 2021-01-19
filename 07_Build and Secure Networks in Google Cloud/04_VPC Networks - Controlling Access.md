@@ -1,11 +1,6 @@
 # VPC Networks - Controlling Access
 
-<span>1 hour</span> <span>7 Credits</span>
-
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 7 Credits
 
 ## GSP213
 
@@ -58,7 +53,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -72,7 +67,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ### Activate Cloud Shell
 
@@ -120,7 +115,7 @@ You can list the project ID with this command:
     [core]
     project = qwiklabs-gcp-44776a13dea667a6
 
-<aside>For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).</aside>
+For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).
 
 ## Create the web servers
 
@@ -192,7 +187,7 @@ Create the **blue** server with a network tag.
 
 **Note:** Networks use network tags to identify which VM instances are subject to certain firewall rules and network routes. Later in this lab, you create a firewall rule to allow HTTP access for VM instances with the **web-server** tag. Alternatively, you could check the **Allow HTTP traffic** checkbox, which would tag this instance as **http-server** and create the tagged firewall rule for tcp:80 for you.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -347,7 +342,7 @@ Create a firewall rule that applies to VM instances with the **web-server** netw
 
 The **default-allow-internal** firewall rule allows traffic on all protocols/ports within the **default** network. You want to create a firewall rule to allow traffic from outside this network to only the **blue** server, by using the network tag **web-server**.
 
-</aside>
+
 
 1.  Click **Create Firewall Rule**.
 
@@ -429,7 +424,7 @@ The **default-allow-internal** firewall rule allows traffic on all protocols/por
 
 Make sure to include the **/0** in the **Source IP ranges** to specify all networks.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -456,7 +451,7 @@ The output should look like this (**do not copy; this is example output**):
 
 You can easily create VM instances from the Console or the gcloud command line.
 
-</aside>
+
 
 #### Test Completed Task
 
@@ -486,7 +481,7 @@ From **test-vm** `curl` the internal and external IP addresses of **blue** and *
 
 You should see the `Welcome to the green server!` header.
 
-<aside>You are able to HTTP access both servers using their internal IP addresses. The connection on tcp:80 is allowed by the **default-allow-internal** firewall rule, as **test-vm** is on the same VPC network as the web servers **default** network).</aside>
+You are able to HTTP access both servers using their internal IP addresses. The connection on tcp:80 is allowed by the **default-allow-internal** firewall rule, as **test-vm** is on the same VPC network as the web servers **default** network).
 
 1.  To test HTTP connectivity to **blue**'s external IP, run the following command, replacing **blue**'s external IP:
 
@@ -502,7 +497,7 @@ You should see the `Welcome to the green server!` header.
 
 This should not work! The request hangs.
 
-</aside>
+
 
 1.  Press **CTRL+c** to stop the HTTP request.
 
@@ -510,7 +505,7 @@ This should not work! The request hangs.
 
 As expected, you are only able to HTTP access the external IP address of the **blue** server as the **allow-http-web-server** only applies to VM instances with the **web-server** tag.
 
-</aside>
+
 
 You can verify the same behavior from your browser by opening a new tab and navigating to `http://[External IP of server]`.
 
@@ -544,7 +539,7 @@ The output should look like this (**do not copy; this is example output**):
 
 This should not work!
 
-</aside>
+
 
 1.  Try to delete the **allow-http-web-server** firewall rule:
 
@@ -561,13 +556,13 @@ The output should look like this (**do not copy; this is example output**):
 
 This should not work!
 
-</aside>
+
 
 <aside class="special">
 
 The **Compute Engine default service account** does not have the right permissions to allow you to list or delete firewall rules. The same applies to other users who do not have the right roles.
 
-</aside>
+
 
 ### Create a service account
 
@@ -617,7 +612,7 @@ Authorize **test-vm** to use the **Network-admin** service account.
 
 The image you are using has the Cloud SDK pre-installed; therefore, you don’t need to initialize the Cloud SDK. If you are attempting this lab in a different environment, make sure you have followed the [procedures regarding installing the Cloud SDK](https://cloud.google.com/sdk/downloads).
 
-</aside>
+
 
 1.  Try to list the available firewall rules:
 
@@ -649,13 +644,13 @@ The output should look like this (**do not copy; this is example output**):
 
 This should not work!
 
-</aside>
+
 
 <aside class="special">
 
 As expected, the **Network Admin** role has permissions to list but not modify/delete firewall rules.
 
-</aside>
+
 
 ### Update service account and verify permissions
 
@@ -704,7 +699,7 @@ This should work!
 
 As expected, the **Security Admin** role has permissions to list and delete firewall rules.
 
-</aside>
+
 
 ### Verify the deletion of the firewall rule
 
@@ -720,7 +715,7 @@ Verify that you can no longer HTTP access the external IP of the **blue** server
 
 This should not work!
 
-</aside>
+
 
 1.  Press **CTRL+c** to stop the HTTP request.
 
@@ -728,7 +723,7 @@ This should not work!
 
 Provide the **Security Admin** role to the right user or service account to avoid any unwanted changes to your firewall rules!
 
-</aside>
+
 
 ## Congratulations!
 
@@ -763,61 +758,3 @@ For information on the basic concepts of Google Cloud Identity and Access Manage
 ##### Lab Last Tested December 2, 2020
 
 Copyright 2020 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
-
-</div>
-
-</div>
-
-<div class="hidden js-end-lab-button-container lab-content__end-lab-button"><ql-lab-control-button class="js-end-lab-button" running=""></ql-lab-control-button></div>
-
-<div class="lab-content__renderable-instructions">
-
-<div class="lab-content__recommendation">
-
-<section class="upcoming-cards">
-
-## Continue questing
-
-<div class="content-card-grid">
-
-<div class="card-content-wrapper js-content-card" data-id="1032" data-level="Advanced" data-name="VPC Networks - Controlling Access" data-type="Lab">[
-
-<div class="card__body">
-
-<div class="overline card--content__type">Lab</div>
-
-### VPC Networks - Controlling Access
-
-<div class="card--content__description body-1">
-
-In this lab, you create two nginx web servers and control external HTTP access to the web servers using tagged firewall rules. Then, you explore IAM policies and service accounts.
-
-</div>
-
-</div>
-
-<div class="card__footer">
-
-<div class="card__footer__left"><span>Advanced</span></div>
-
-</div>
-
-](/focuses/1231?parent=catalog&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</div>
-
-</section>
-
-</div>
-
-</div>
-
-</ql-drawer-content><ql-drawer end="" id="outline-drawer" open="" slot="drawer" width="320">
-
-<div class="js-lab-content-outline lab-content__outline">[GSP213](#step1)[Overview](#step2)[Setup and Requirements](#step3)[Create the web servers](#step4)[Create the firewall rule](#step5)[Explore the Network and Security Admin roles](#step6)[Congratulations!](#step7)</div>
-
-</ql-drawer></ql-drawer-container></ql-drawer-content></ql-drawer-container>
-
-<div class="lab-introduction js-lab-introduction is-hidden">
-
-<div class="lab-introduction__inner">

@@ -1,203 +1,6 @@
-<div class="header-container light-theme">
-
-<div class="header"><ql-icon-button class="js-nav-toggle header__nav-panel-button l-mrm">menu</ql-icon-button>
-
-<div class="header__title">[<ql-icon>arrow_back</ql-icon>](https://google.qwiklabs.com/quests/128?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)
-
 # Create an Internal Load Balancer
 
-</div>
-
-<div class="header__actions"><ql-icon-button class="header__button--search js-header-search-bar-button">search</ql-icon-button> [<ql-icon>favorite_border</ql-icon>](/favorite.json?item_id=1250&item_type=CatalogItem&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)
-
-<div class="mdl-tooltip js-tooltip" for="CatalogItem-1250-favorite-button">Add to favorites</div>
-
-<ql-icon-button id="control-panel-target" style="display: none;">dashboard</ql-icon-button> <ql-icon-button id="help-menu-button">help</ql-icon-button>
-
-<div class="mdl-tooltip js-tooltip" data-mdl-for="help-menu-button">Help</div>
-
-<ql-menu for="#help-menu-button" id="help-menu"><ql-menu-item><ql-help context="lab" data-analytics-action="opened_help" data-analytics-label="lab" productdata="{&quot;userId&quot;:4061609}">Help Center</ql-help> </ql-menu-item><ql-menu-item>[Email support](https://support.google.com/qwiklabs/contact/contact_us)</ql-menu-item> <ql-menu-item><a class="ql-body-1" onclick="ql.chat.open()">Chat support</a></ql-menu-item></ql-menu><button class="icon-button" id="my_account"><ql-avatar src="https://lh3.googleusercontent.com/a-/AOh14GhQq4o2edVnaxPhba-uHo4quEhqCkrVJHbCxFDxkg=s320-c"></ql-avatar></button><ql-menu for="#my_account" open="">
-
-<div class="my-account-menu"><ql-avatar class="l-mtl l-mbl" size="120" src="https://lh3.googleusercontent.com/a-/AOh14GhQq4o2edVnaxPhba-uHo4quEhqCkrVJHbCxFDxkg=s320-c"></ql-avatar>
-
-<div class="my-account-menu__user-info l-mbl">
-
-#### jose luis
-
-josloe@gmail.com
-
-[<ql-chip positive="">Monthly Subscription</ql-chip>](/my_account/payments?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-<div class="buttons l-mbl">[Settings](/my_account/profile?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-* * *
-
-<ql-button data-analytics-action="clicked_sign_out" href="/users/sign_out?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle" method="delete">Sign Out</ql-button>
-
-<div class="privacy l-mtl">[Privacy](/privacy_policy?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) <span class="ql-caption text--light l-mls l-mrs">·</span> [Terms](/terms_of_service?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</div>
-
-</ql-menu></div>
-
-</div>
-
-<div class="header__search-bar js-header-search-bar">
-
-<form class="js-search-form-mobile" onsubmit="ql.searchFilter(); return false;" action="/searches/elasticsearch" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="FmYyB+tE8QBJxoFB5re3qGPbb8UPUYBh9N5M2qoAiDyI0UIw0u8HV5q/uYpD5QS8RTOyAHo5UkBgsRL1R/YIJw=="> <input type="text" name="keywords" id="keywords" placeholder="Search" maxlength="255" aria-label="catalog search bar"></form>
-
-<ql-icon-button class="js-close-search-bar">close</ql-icon-button></div>
-
-</div>
-
-<nav class="nav-bar">[<ql-icon class="nav-bar__item__icon">home</ql-icon> <span class="nav-bar__item__label">Home</span> ](/?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)[<ql-icon class="nav-bar__item__icon">school</ql-icon> <span class="nav-bar__item__label">Catalog</span> ](/catalog?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)[<ql-icon class="nav-bar__item__icon">event_note</ql-icon> <span class="nav-bar__item__label">My Learning</span>](/my_learning?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</nav>
-
-<nav class="nav-panel js-nav-panel">
-
-<div class="nav-panel__logo">
-
-<div class="custom-logo">![](https://storage.googleapis.com/qwiklabs-cdn-bucket-d8612e07d1cc/logos/GoogleCloudTraining.svg)</div>
-
-</div>
-
-[<ql-icon class="nav-panel__item__icon">home</ql-icon>
-
-<div class="nav-panel__item__label">Home</div>
-
-](/?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Home")[<ql-icon class="nav-panel__item__icon">school</ql-icon>
-
-<div class="nav-panel__item__label">Catalog</div>
-
-](/catalog?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Catalog")[<ql-icon class="nav-panel__item__icon">event_note</ql-icon>
-
-<div class="nav-panel__item__label">My Learning</div>
-
-](/my_learning?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "My Learning")[<ql-icon class="nav-panel__item__icon">account_circle</ql-icon>
-
-<div class="nav-panel__item__label">Profile</div>
-
-](/my_account/profile?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Profile")[<ql-icon class="nav-panel__item__icon">money</ql-icon>
-
-<div class="nav-panel__item__label">Credits & Subscriptions</div>
-
-](/my_account/credits?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Credits & Subscriptions")[<ql-icon class="nav-panel__item__icon">security</ql-icon>
-
-<div class="nav-panel__item__label">Security</div>
-
-](/my_account/security?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Security")[<ql-help>
-
-<div class="nav-panel__help-item"><ql-icon class="nav-panel__item__icon">help</ql-icon>
-
-<div class="nav-panel__item__label">Help</div>
-
-</div>
-
-</ql-help>](#)
-
-<div class="nav-panel__small-links">[Privacy](/privacy_policy?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) [Terms](/terms_of_service?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</nav>
-
-<main class="js-main"><span class="hidden" id="flash-sibling-before"></span>
-
-<div class="l-main-wrapper" id="main-wrapper">
-
-<div class="lab-assessment__tab js-open-lab-assessment-panel">
-
-###### —/100
-
-</div>
-
-<div class="lab-assessment__panel js-lab-assessment-panel">
-
-<div class="lab-assessment__panel__header">
-
-#### Checkpoints
-
-<ql-icon-button class="js-close-lab-assessment-panel">arrow_forward</ql-icon-button></div>
-
-<div class="lab-assessment__step">
-
-Configure HTTP and health check firewall rules
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="1">Check my progress</a>
-
-<span class="js-assessment-step-score-1"></span>/ 40
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Configure instance templates and create instance groups
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="2">Check my progress</a>
-
-<span class="js-assessment-step-score-2"></span>/ 30
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Configure the Internal Load Balancer
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="3">Check my progress</a>
-
-<span class="js-assessment-step-score-3"></span>/ 30
-
-</div>
-
-</div>
-
-</div>
-
-<ql-drawer-container class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;Create an Internal Load Balancer&quot;,&quot;lab_name&quot;:&quot;Create an Internal Load Balancer&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;google-run&quot;}" data-focus-id="1250" data-lab-billing-limit="0.0" data-lab-duration="3000" data-parent="catalog" data-payment-required="" data-qlcampaign="1m-freelabs-456?utm_source=google" data-recaptcha-enabled="" id="lab-container"><ql-drawer id="terminal-drawer" slot="drawer"><ql-cloud-terminal class="terminal"></ql-cloud-terminal></ql-drawer><ql-drawer-content class="js-lab-wrapper" id="lab-content" slot="drawer-content"><ql-drawer-container id="lab-content-container"><ql-drawer id="control-panel-drawer" open="" slot="drawer" width="320"><ql-lab-control-panel class="ql-lab-control-panel__max-height control-panel js-lab-control-panel" connectionfiles="[]" labcontrolbutton="{&quot;disabled&quot;:false,&quot;pending&quot;:false,&quot;running&quot;:false}" labdetails="[]" labtimer="{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:3000}" studentresources="[]"><script>// Define function so that we can call it again later if we need to reset it // This executes reCAPTCHA and then calls our callback. function executeRecaptchaForStartLab() { grecaptcha.ready(function() { grecaptcha.execute('6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr', {action: 'start_lab'}).then(function(token) { setInputWithRecaptchaResponseTokenForStartLab('g-recaptcha-response-data-start-lab', token) }); }); }; // Invoke immediately executeRecaptchaForStartLab() // Async variant so you can await this function from another async function (no need for // an explicit callback function then!) // Returns a Promise that resolves with the response token. async function executeRecaptchaForStartLabAsync() { return new Promise((resolve, reject) => { grecaptcha.ready(async function() { resolve(await grecaptcha.execute('6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr', {action: 'start_lab'})) }); }) }; var setInputWithRecaptchaResponseTokenForStartLab = function(id, token) { var element = document.getElementById(id); element.value = token; }</script> <input type="hidden" name="g-recaptcha-response-data[start_lab]" id="g-recaptcha-response-data-start-lab" data-sitekey="6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr" class="g-recaptcha g-recaptcha-response ">
-
-<div class="hidden" id="recaptcha-v2-start-lab" slot="recaptcha">
-
-<noscript>
-
-<div>
-
-<div style="width: 302px; height: 422px; position: relative;">
-
-<div style="width: 302px; height: 422px; position: absolute;"><iframe src="https://www.recaptcha.net/recaptcha/api/fallback?k=6LeOI8IUAAAAAPkHlMAE9NReCD_1WD81iYlBlCnV" name="ReCAPTCHA" style="width: 302px; height: 422px; border-style: none; border: 0; overflow: hidden;"></iframe></div>
-
-</div>
-
-<div style="width: 300px; height: 60px; border-style: none;
-                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
-                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;"><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
-                  margin: 10px 25px; padding: 0px; resize: none;"></textarea></div>
-
-</div>
-
-</noscript>
-
-</div>
-
-</ql-lab-control-panel></ql-drawer><ql-drawer-content id="lab-instructions" slot="drawer-content">
-
-<div class="alert alert--fake js-alert"><a class="alert__close js-alert-close"></a><iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="js-lab-content lab-content__renderable-instructions">
-
-<div class="lab-preamble">
-
-# Create an Internal Load Balancer
-
-<div class="lab-preamble__details subtitle-headline-1"><span>50 minutes</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1250/reviews?parent=catalog&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+50 minutes 7 Credits
 
 ## GSP216
 
@@ -254,7 +57,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -268,7 +71,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ## Configure HTTP and health check firewall rules
 
@@ -380,7 +183,7 @@ Create a firewall rule to allow HTTP traffic to the backends from the Load Balan
 
 Make sure to include the **/0** in the **Source IP ranges** to specify all networks.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -460,7 +263,7 @@ Health checks determine which instances of a Load Balancer can receive new conne
 
 Make sure to enter the two **Source IP ranges** one-by-one and pressing SPACE in between them.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -754,7 +557,7 @@ Click Check my progress to verify the objective.
 
 If these IP addresses are different, replace them in the two **curl** commands below.
 
-</aside>
+
 
 1.  For **utility-vm**, click **SSH** to launch a terminal and connect.
 
@@ -780,7 +583,7 @@ The output should look like this (**example output**):
 
 The **curl** commands demonstrate that each VM instance lists the Client IP and its own name and location. This will be useful when verifying that the Internal Load Balancer sends traffic to both backends.
 
-</aside>
+
 
 1.  Close the SSH terminal to **utility-vm**:
 
@@ -802,7 +605,7 @@ Configure the Internal Load Balancer to balance traffic between the two backends
 
 Choosing **Only between my VMs** makes this Load Balancer internal. This choice requires the backends to be in a single region (us-central1) and does not allow offloading TCP processing to the Load Balancer.
 
-</aside>
+
 
 1.  Click **Continue**.
 
@@ -962,7 +765,7 @@ The output should look like this (**example output**):
 
 As expected, traffic is forwarded from the Internal Load Balancer (10.10.30.5) to the backend.
 
-</aside>
+
 
 1.  Run the same command a couple more times.
 

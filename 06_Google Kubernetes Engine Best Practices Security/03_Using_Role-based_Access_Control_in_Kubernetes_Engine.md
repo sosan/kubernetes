@@ -1,14 +1,6 @@
 # Using Role-based Access Control in Kubernetes Engine
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/5156/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 7 Credits
 
 ![GKE-Engine.png](https://cdn.qwiklabs.com/QKV092kALeUu8E6Qu3qVrHWJ%2BjkMkSlR%2BwZpsbfX73w%3D)
 
@@ -68,7 +60,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -82,7 +74,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ### Activate Cloud Shell
 
@@ -130,13 +122,13 @@ You can list the project ID with this command:
     [core]
     project = qwiklabs-gcp-44776a13dea667a6
 
-<aside>For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).</aside>
+For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).
 
 ### Set your region and zone
 
 Certain Compute Engine resources live in regions and zones. A region is a specific geographical location where you can run your resources. Each region has one or more zones.
 
-<aside>Learn more about regions and zones and see a complete list in [Regions & Zones documentation](https://cloud.google.com/compute/docs/regions-zones/).</aside>
+Learn more about regions and zones and see a complete list in [Regions & Zones documentation](https://cloud.google.com/compute/docs/regions-zones/).
 
 Run the following to set a region and zone for your lab (you can use the region/zone that's best for you):
 
@@ -779,205 +771,3 @@ Continue your Quest with [Google Kubernetes Engine Security: Binary Authorizatio
 ##### Lab Last Tested December 17, 2020
 
 Copyright 2020 Google LLC. This software is provided as-is, without warranty or representation for any use or purpose. Your use of it is subject to your agreement with Google
-
-</div>
-
-</div>
-
-<div class="hidden js-end-lab-button-container lab-content__end-lab-button"><ql-lab-control-button class="js-end-lab-button" running=""></ql-lab-control-button></div>
-
-<div class="lab-content__renderable-instructions">
-
-<div class="lab-content__recommendation">
-
-<section class="upcoming-cards">
-
-## Continue questing
-
-<div class="content-card-grid">
-
-<div class="card-content-wrapper js-content-card" data-id="2762" data-level="Advanced" data-name="Migrating to GKE Containers" data-type="Lab">[
-
-<div class="card__body">
-
-<div class="overline card--content__type">Hands-On Lab</div>
-
-### Migrating to GKE Containers
-
-This lab teaches you how to migrate a stateless application from running on a VM to running on Kubernetes Engine (GKE). You will learn about the lifecycle of an application transitioning from a typical VM/OS-based deployment to three different containerized cloud infrastructure platforms.
-
-</div>
-
-<div class="card__footer">
-
-<div class="card__footer__left"><span>Advanced</span></div>
-
-</div>
-
-](/focuses/12768?parent=catalog)</div>
-
-</div>
-
-</section>
-
-</div>
-
-</div>
-
-</ql-drawer-content><ql-drawer end="" id="outline-drawer" open="" slot="drawer" width="320">
-
-<div class="js-lab-content-outline lab-content__outline">[GSP493](#step1)[Overview](#step2)[Architecture](#step3)[Setup](#step4)[Clone demo](#step5)[Deployment](#step6)[Scenario 1: Assigning permissions by user persona](#step7)[Scenario 2: Assigning API permissions to a cluster application](#step8)[Teardown](#step9)[Troubleshooting in your own environment](#step10)[Congratulations](#step11)</div>
-
-</ql-drawer></ql-drawer-container></ql-drawer-content></ql-drawer-container>
-
-<div class="lab-introduction js-lab-introduction is-hidden">
-
-<div class="lab-introduction__inner">
-
-# Welcome to Your First Lab!
-
-<ql-icon-button class="js-skip-button">close</ql-icon-button>
-
-<div class="lab-introduction__video"><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="https://www.youtube.com/embed/yF7EDXKTmoQ?enablejsapi=1&amp;rel=0&amp;showinfo=0"></iframe></div>
-
-<a class="js-skip-button button button--outline">Skip this video</a></div>
-
-</div>
-
-</div>
-
-</main>
-
-<div class="modal fade" id="lab-details-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<div class="modal-body">
-
-After provisioning two service accounts to represent user personas and three namespaces: dev, test, and prod, you will test the access controls of the personals in each namespace.
-
-This lab is included in these quests: [Google Kubernetes Engine Best Practices: Security](/quests/64), [Secure Workloads in Google Kubernetes Engine](/quests/142). If you complete this lab you'll receive credit for it when you enroll in one of these quests.
-
-**Duration:** 0m setup · 60m access · 60m completion
-
-<span>**Levels:** advanced</span>
-
-**Permalink:** [https://google.qwiklabs.com/catalog_lab/1720](https://google.qwiklabs.com/catalog_lab/1720)
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Got It</a></div>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="modal fade" id="lab-review-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<form class="simple_form js-lab-review-form" id="new_lab_review" action="/lab_reviews" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-
-<div class="modal-body">
-
-How satisfied are you with this lab?*
-
-<div class="l-mtm">
-
-<div class="control-group hidden lab_review_user_id">
-
-<div class="controls"><input class="hidden" type="hidden" value="4061609" name="lab_review[user_id]" id="lab_review_user_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_classroom_id">
-
-<div class="controls"><input class="hidden" type="hidden" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_lab_id">
-
-<div class="controls"><input class="hidden" type="hidden" value="1720" name="lab_review[lab_id]" id="lab_review_lab_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_focus_id">
-
-<div class="controls"><input class="hidden" type="hidden" name="lab_review[focus_id]" id="lab_review_focus_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_rating">
-
-<div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div>
-
-</div>
-
-<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">Comment</label>
-
-<div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Cancel</a> <input type="submit" name="commit" value="Submit" disabled="disabled" id="submit" data-disabled="false" class="button" data-disable-with="Submit"></div>
-
-</form>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="modal fade" id="lab-access-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content"><a class="lab-access-modal-close" data-analytics-action="dismissed_lab_payment_modal" data-dismiss="modal">_close_</a>
-
-<form class="js-lab-access-form" action="/lab_onetime_coupons/activate?parent=catalog" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-
-<div class="modal-body">
-
-<div class="lab-access-modal"><input type="hidden" name="id" id="id" value="5156"> <input type="hidden" name="user_id" id="user_id" value="4061609"> <input type="hidden" name="launch_with_credits" id="launch_with_credits" value="0" class="js-launch-with-credits-input"> <input type="hidden" name="launch_with_subs" id="launch_with_subs" value="0" class="js-launch-with-subscription-input">
-
-<div class="lab-access-modal__method">
-
-This lab costs 7 Credits.
-
-You have a valid subscription package. Would you like to charge this lab to your subscription?
-
-<a class="button js-launch-with-subscription-button js-lab-access-modal-button" data-analytics-action="clicked_launch_with_subscription_button">Use Subscription</a></div>
-
-<div class="lab-access-modal__method">
-
-Enter Lab Access Code:
-
-<div class="lab-access-modal__code js-access-code"><input type="text" name="uuid_1" id="uuid_1" value="" maxlength="4" placeholder="1234" class="js-access-code-input"> <input type="text" name="uuid_2" id="uuid_2" value="" maxlength="4" placeholder="1234" class="js-access-code-input"> <input type="text" name="uuid_3" id="uuid_3" value="" maxlength="4" placeholder="1234" class="js-access-code-input"> <input type="text" name="uuid_4" id="uuid_4" value="" maxlength="4" placeholder="1234" class="js-access-code-input"></div>
-
-<a class="button js-launch-with-access-code-button js-lab-access-modal-button" data-analytics-action="clicked_launch_with_access_code_button">Launch with Access Code</a></div>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<script>$( function() { ql.initMaterialInputs(); initChosen(); initSearch(); initTabs(); ql.list.init(); ql.favoriting.init(); ql.header.myAccount.init(); initTooltips(); ql.autocomplete.init(); ql.modals.init(); ql.toggleButtons.init(); ql.analytics.init(); ql.favoriting.init(); ql.labControlPanel.addRecaptchaErrorHandler(); initLabContent(); ql.labOutline.links.init(); initLabReviewModal(); initLabAccessModal(); ql.labAssessment.init(); ql.labIntroduction.init( true ); ql.labData.init(); initLabTranslations( {"are_you_sure":"All done? If you end this lab, you will lose all your work. You may not be able to restart the lab if there is a quota limit. Are you sure you want to end this lab?\n","in_progress":"*In Progress*","ending":"*Ending*","starting":"*Starting, please wait*","end_concurrent_labs":"Sorry, you can only run one lab at a time. To start this lab, please confirm that you want all of your existing labs to end.\n","copied":"Copied","no_resource":"Error retrieving resource.","no_support":"No Support","mac_press":"Press ⌘-C to copy","thanks_review":"Thanks for reviewing this lab.","windows_press":"Press Ctrl-C to copy","days":"days"} ); ql.labRun.init(); ql.chat.init(); ql.initHeader(); ql.navigation.init(); ql.navPanel.init(); ql.navigation.init(); });</script> <style>.mdl-layout__container { position: static }</style>

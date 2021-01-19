@@ -1,235 +1,6 @@
-<div class="header-container light-theme">
-
-<div class="header"><ql-icon-button class="js-nav-toggle header__nav-panel-button l-mrm">menu</ql-icon-button>
-
-<div class="header__title">[<ql-icon>arrow_back</ql-icon>](https://google.qwiklabs.com/quests/128?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)
-
 # VPC Networks - Controlling Access
 
-</div>
-
-<div class="header__actions"><ql-icon-button class="header__button--search js-header-search-bar-button">search</ql-icon-button> [<ql-icon>favorite_border</ql-icon>](/favorite.json?item_id=1231&item_type=CatalogItem&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)
-
-<div class="mdl-tooltip js-tooltip" for="CatalogItem-1231-favorite-button">Add to favorites</div>
-
-<ql-icon-button id="control-panel-target" style="display: none;">dashboard</ql-icon-button> <ql-icon-button id="help-menu-button">help</ql-icon-button> <ql-menu for="#help-menu-button" id="help-menu"><ql-menu-item><ql-help context="lab" data-analytics-action="opened_help" data-analytics-label="lab" productdata="{&quot;userId&quot;:4061609}">Help Center</ql-help> </ql-menu-item><ql-menu-item>[Email support](https://support.google.com/qwiklabs/contact/contact_us)</ql-menu-item> <ql-menu-item><a class="ql-body-1" onclick="ql.chat.open()">Chat support</a></ql-menu-item></ql-menu><button class="icon-button" id="my_account"><ql-avatar src="https://lh3.googleusercontent.com/a-/AOh14GhQq4o2edVnaxPhba-uHo4quEhqCkrVJHbCxFDxkg=s320-c"></ql-avatar></button><ql-menu for="#my_account" open="">
-
-<div class="my-account-menu"><ql-avatar class="l-mtl l-mbl" size="120" src="https://lh3.googleusercontent.com/a-/AOh14GhQq4o2edVnaxPhba-uHo4quEhqCkrVJHbCxFDxkg=s320-c"></ql-avatar>
-
-<div class="my-account-menu__user-info l-mbl">
-
-#### jose luis
-
-josloe@gmail.com
-
-[<ql-chip positive="">Monthly Subscription</ql-chip>](/my_account/payments?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-<div class="buttons l-mbl">[Settings](/my_account/profile?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-* * *
-
-<ql-button data-analytics-action="clicked_sign_out" href="/users/sign_out?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle" method="delete">Sign Out</ql-button>
-
-<div class="privacy l-mtl">[Privacy](/privacy_policy?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) <span class="ql-caption text--light l-mls l-mrs">·</span> [Terms](/terms_of_service?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</div>
-
-</ql-menu></div>
-
-</div>
-
-<div class="header__search-bar js-header-search-bar">
-
-<form class="js-search-form-mobile" onsubmit="ql.searchFilter(); return false;" action="/searches/elasticsearch" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="AsVlYpzHZ5JFd/IVJE0VbvZs3PMZdPDckkFbroOfWcicchVVpWyRxZYOyt6BH6Z60IQBNmwcIv0GLgWBbmnZ0w=="> <input type="text" name="keywords" id="keywords" placeholder="Search" maxlength="255" aria-label="catalog search bar"></form>
-
-<ql-icon-button class="js-close-search-bar">close</ql-icon-button></div>
-
-</div>
-
-<nav class="nav-bar">[<ql-icon class="nav-bar__item__icon">home</ql-icon> <span class="nav-bar__item__label">Home</span> ](/?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)[<ql-icon class="nav-bar__item__icon">school</ql-icon> <span class="nav-bar__item__label">Catalog</span> ](/catalog?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)[<ql-icon class="nav-bar__item__icon">event_note</ql-icon> <span class="nav-bar__item__label">My Learning</span>](/my_learning?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</nav>
-
-<nav class="nav-panel js-nav-panel">
-
-<div class="nav-panel__logo">
-
-<div class="custom-logo">![](https://storage.googleapis.com/qwiklabs-cdn-bucket-d8612e07d1cc/logos/GoogleCloudTraining.svg)</div>
-
-</div>
-
-[<ql-icon class="nav-panel__item__icon">home</ql-icon>
-
-<div class="nav-panel__item__label">Home</div>
-
-](/?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Home")[<ql-icon class="nav-panel__item__icon">school</ql-icon>
-
-<div class="nav-panel__item__label">Catalog</div>
-
-](/catalog?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Catalog")[<ql-icon class="nav-panel__item__icon">event_note</ql-icon>
-
-<div class="nav-panel__item__label">My Learning</div>
-
-](/my_learning?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "My Learning")[<ql-icon class="nav-panel__item__icon">account_circle</ql-icon>
-
-<div class="nav-panel__item__label">Profile</div>
-
-](/my_account/profile?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Profile")[<ql-icon class="nav-panel__item__icon">money</ql-icon>
-
-<div class="nav-panel__item__label">Credits & Subscriptions</div>
-
-](/my_account/credits?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Credits & Subscriptions")[<ql-icon class="nav-panel__item__icon">security</ql-icon>
-
-<div class="nav-panel__item__label">Security</div>
-
-](/my_account/security?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle "Security")[<ql-help>
-
-<div class="nav-panel__help-item"><ql-icon class="nav-panel__item__icon">help</ql-icon>
-
-<div class="nav-panel__item__label">Help</div>
-
-</div>
-
-</ql-help>](#)
-
-<div class="nav-panel__small-links">[Privacy](/privacy_policy?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) [Terms](/terms_of_service?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</nav>
-
-<main class="js-main"><span class="hidden" id="flash-sibling-before"></span>
-
-<div class="l-main-wrapper" id="main-wrapper">
-
-<div class="lab-assessment__tab js-open-lab-assessment-panel">
-
-###### —/100
-
-</div>
-
-<div class="lab-assessment__panel js-lab-assessment-panel">
-
-<div class="lab-assessment__panel__header">
-
-#### Checkpoints
-
-<ql-icon-button class="js-close-lab-assessment-panel">arrow_forward</ql-icon-button></div>
-
-<div class="lab-assessment__step">
-
-Create the blue server
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="1">Check my progress</a>
-
-<span class="js-assessment-step-score-1"></span>/ 15
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Create the green server
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="2">Check my progress</a>
-
-<span class="js-assessment-step-score-2"></span>/ 15
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Install Nginx and customize the welcome page
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="3">Check my progress</a>
-
-<span class="js-assessment-step-score-3"></span>/ 30
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Create the tagged firewall rule
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="4">Check my progress</a>
-
-<span class="js-assessment-step-score-4"></span>/ 15
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Create a test-vm
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="5">Check my progress</a>
-
-<span class="js-assessment-step-score-5"></span>/ 10
-
-</div>
-
-</div>
-
-<div class="lab-assessment__step">
-
-Create a Network-admin service account
-
-<div class="lab-assessment__step__action"><a class="button js-show-run-step-button" step_no="6">Check my progress</a>
-
-<span class="js-assessment-step-score-6"></span>/ 15
-
-</div>
-
-</div>
-
-</div>
-
-<ql-drawer-container class="js-lab-state" data-analytics-payload="{&quot;label&quot;:&quot;VPC Networks - Controlling Access&quot;,&quot;lab_name&quot;:&quot;VPC Networks - Controlling Access&quot;,&quot;classroom_name&quot;:null,&quot;deployment&quot;:&quot;google-run&quot;}" data-focus-id="1231" data-lab-billing-limit="0.0" data-lab-duration="3600" data-parent="catalog" data-payment-required="" data-qlcampaign="1m-freelabs-456?utm_source=google" data-recaptcha-enabled="" id="lab-container"><ql-drawer id="terminal-drawer" slot="drawer"><ql-cloud-terminal class="terminal"></ql-cloud-terminal></ql-drawer><ql-drawer-content class="js-lab-wrapper" id="lab-content" slot="drawer-content"><ql-drawer-container id="lab-content-container"><ql-drawer id="control-panel-drawer" open="" slot="drawer" width="320"><ql-lab-control-panel class="ql-lab-control-panel__max-height control-panel js-lab-control-panel" connectionfiles="[]" labcontrolbutton="{&quot;disabled&quot;:false,&quot;pending&quot;:false,&quot;running&quot;:false}" labdetails="[]" labtimer="{&quot;ticking&quot;:false,&quot;secondsRemaining&quot;:3600}" studentresources="[]"><script>// Define function so that we can call it again later if we need to reset it // This executes reCAPTCHA and then calls our callback. function executeRecaptchaForStartLab() { grecaptcha.ready(function() { grecaptcha.execute('6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr', {action: 'start_lab'}).then(function(token) { setInputWithRecaptchaResponseTokenForStartLab('g-recaptcha-response-data-start-lab', token) }); }); }; // Invoke immediately executeRecaptchaForStartLab() // Async variant so you can await this function from another async function (no need for // an explicit callback function then!) // Returns a Promise that resolves with the response token. async function executeRecaptchaForStartLabAsync() { return new Promise((resolve, reject) => { grecaptcha.ready(async function() { resolve(await grecaptcha.execute('6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr', {action: 'start_lab'})) }); }) }; var setInputWithRecaptchaResponseTokenForStartLab = function(id, token) { var element = document.getElementById(id); element.value = token; }</script> <input type="hidden" name="g-recaptcha-response-data[start_lab]" id="g-recaptcha-response-data-start-lab" data-sitekey="6LeVI8IUAAAAAJNdox5eTkYrw9SbvhZ1TFyv3iHr" class="g-recaptcha g-recaptcha-response ">
-
-<div class="hidden" id="recaptcha-v2-start-lab" slot="recaptcha">
-
-<noscript>
-
-<div>
-
-<div style="width: 302px; height: 422px; position: relative;">
-
-<div style="width: 302px; height: 422px; position: absolute;"><iframe src="https://www.recaptcha.net/recaptcha/api/fallback?k=6LeOI8IUAAAAAPkHlMAE9NReCD_1WD81iYlBlCnV" name="ReCAPTCHA" style="width: 302px; height: 422px; border-style: none; border: 0; overflow: hidden;"></iframe></div>
-
-</div>
-
-<div style="width: 300px; height: 60px; border-style: none;
-                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
-                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;"><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
-                  margin: 10px 25px; padding: 0px; resize: none;"></textarea></div>
-
-</div>
-
-</noscript>
-
-</div>
-
-</ql-lab-control-panel></ql-drawer><ql-drawer-content id="lab-instructions" slot="drawer-content">
-
-<div class="alert alert--fake js-alert"><a class="alert__close js-alert-close"></a><iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="js-lab-content lab-content__renderable-instructions">
-
-<div class="lab-preamble">
-
-# VPC Networks - Controlling Access
-
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1231/reviews?parent=catalog&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 7 Credits
 
 ## GSP213
 
@@ -282,7 +53,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -296,7 +67,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ### Activate Cloud Shell
 
@@ -344,7 +115,7 @@ You can list the project ID with this command:
     [core]
     project = qwiklabs-gcp-44776a13dea667a6
 
-<aside>For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).</aside>
+For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).
 
 ## Create the web servers
 
@@ -416,7 +187,7 @@ Create the **blue** server with a network tag.
 
 **Note:** Networks use network tags to identify which VM instances are subject to certain firewall rules and network routes. Later in this lab, you create a firewall rule to allow HTTP access for VM instances with the **web-server** tag. Alternatively, you could check the **Allow HTTP traffic** checkbox, which would tag this instance as **http-server** and create the tagged firewall rule for tcp:80 for you.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -571,7 +342,7 @@ Create a firewall rule that applies to VM instances with the **web-server** netw
 
 The **default-allow-internal** firewall rule allows traffic on all protocols/ports within the **default** network. You want to create a firewall rule to allow traffic from outside this network to only the **blue** server, by using the network tag **web-server**.
 
-</aside>
+
 
 1.  Click **Create Firewall Rule**.
 
@@ -653,7 +424,7 @@ The **default-allow-internal** firewall rule allows traffic on all protocols/por
 
 Make sure to include the **/0** in the **Source IP ranges** to specify all networks.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -680,7 +451,7 @@ The output should look like this (**do not copy; this is example output**):
 
 You can easily create VM instances from the Console or the gcloud command line.
 
-</aside>
+
 
 #### Test Completed Task
 
@@ -710,7 +481,7 @@ From **test-vm** `curl` the internal and external IP addresses of **blue** and *
 
 You should see the `Welcome to the green server!` header.
 
-<aside>You are able to HTTP access both servers using their internal IP addresses. The connection on tcp:80 is allowed by the **default-allow-internal** firewall rule, as **test-vm** is on the same VPC network as the web servers **default** network).</aside>
+You are able to HTTP access both servers using their internal IP addresses. The connection on tcp:80 is allowed by the **default-allow-internal** firewall rule, as **test-vm** is on the same VPC network as the web servers **default** network).
 
 1.  To test HTTP connectivity to **blue**'s external IP, run the following command, replacing **blue**'s external IP:
 
@@ -726,7 +497,7 @@ You should see the `Welcome to the green server!` header.
 
 This should not work! The request hangs.
 
-</aside>
+
 
 1.  Press **CTRL+c** to stop the HTTP request.
 
@@ -734,7 +505,7 @@ This should not work! The request hangs.
 
 As expected, you are only able to HTTP access the external IP address of the **blue** server as the **allow-http-web-server** only applies to VM instances with the **web-server** tag.
 
-</aside>
+
 
 You can verify the same behavior from your browser by opening a new tab and navigating to `http://[External IP of server]`.
 
@@ -768,7 +539,7 @@ The output should look like this (**do not copy; this is example output**):
 
 This should not work!
 
-</aside>
+
 
 1.  Try to delete the **allow-http-web-server** firewall rule:
 
@@ -785,13 +556,13 @@ The output should look like this (**do not copy; this is example output**):
 
 This should not work!
 
-</aside>
+
 
 <aside class="special">
 
 The **Compute Engine default service account** does not have the right permissions to allow you to list or delete firewall rules. The same applies to other users who do not have the right roles.
 
-</aside>
+
 
 ### Create a service account
 
@@ -841,7 +612,7 @@ Authorize **test-vm** to use the **Network-admin** service account.
 
 The image you are using has the Cloud SDK pre-installed; therefore, you don’t need to initialize the Cloud SDK. If you are attempting this lab in a different environment, make sure you have followed the [procedures regarding installing the Cloud SDK](https://cloud.google.com/sdk/downloads).
 
-</aside>
+
 
 1.  Try to list the available firewall rules:
 
@@ -873,13 +644,13 @@ The output should look like this (**do not copy; this is example output**):
 
 This should not work!
 
-</aside>
+
 
 <aside class="special">
 
 As expected, the **Network Admin** role has permissions to list but not modify/delete firewall rules.
 
-</aside>
+
 
 ### Update service account and verify permissions
 
@@ -928,7 +699,7 @@ This should work!
 
 As expected, the **Security Admin** role has permissions to list and delete firewall rules.
 
-</aside>
+
 
 ### Verify the deletion of the firewall rule
 
@@ -944,7 +715,7 @@ Verify that you can no longer HTTP access the external IP of the **blue** server
 
 This should not work!
 
-</aside>
+
 
 1.  Press **CTRL+c** to stop the HTTP request.
 
@@ -952,7 +723,7 @@ This should not work!
 
 Provide the **Security Admin** role to the right user or service account to avoid any unwanted changes to your firewall rules!
 
-</aside>
+
 
 ## Congratulations!
 
@@ -988,100 +759,4 @@ For information on the basic concepts of Google Cloud Identity and Access Manage
 
 Copyright 2020 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
 
-</div>
 
-</div>
-
-<div class="hidden js-end-lab-button-container lab-content__end-lab-button"><ql-lab-control-button class="js-end-lab-button" running=""></ql-lab-control-button></div>
-
-<div class="lab-content__renderable-instructions">
-
-<div class="lab-content__recommendation">
-
-<section class="upcoming-cards">
-
-## Continue questing
-
-<div class="content-card-grid">
-
-<div class="card-content-wrapper js-content-card" data-id="1032" data-level="Advanced" data-name="VPC Networks - Controlling Access" data-type="Lab">[
-
-<div class="card__body">
-
-<div class="overline card--content__type">Lab</div>
-
-### VPC Networks - Controlling Access
-
-<div class="card--content__description body-1">
-
-In this lab, you create two nginx web servers and control external HTTP access to the web servers using tagged firewall rules. Then, you explore IAM policies and service accounts.
-
-</div>
-
-</div>
-
-<div class="card__footer">
-
-<div class="card__footer__left"><span>Advanced</span></div>
-
-</div>
-
-](/focuses/1231?parent=catalog&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</div>
-
-</section>
-
-</div>
-
-</div>
-
-</ql-drawer-content><ql-drawer end="" id="outline-drawer" open="" slot="drawer" width="320">
-
-<div class="js-lab-content-outline lab-content__outline">[GSP213](#step1)[Overview](#step2)[Setup and Requirements](#step3)[Create the web servers](#step4)[Create the firewall rule](#step5)[Explore the Network and Security Admin roles](#step6)[Congratulations!](#step7)</div>
-
-</ql-drawer></ql-drawer-container></ql-drawer-content></ql-drawer-container>
-
-<div class="lab-introduction js-lab-introduction is-hidden">
-
-<div class="lab-introduction__inner">
-
-# Welcome to Your First Lab!
-
-<ql-icon-button class="js-skip-button">close</ql-icon-button>
-
-<div class="lab-introduction__video"><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="https://www.youtube.com/embed/yF7EDXKTmoQ?enablejsapi=1&amp;rel=0&amp;showinfo=0"></iframe></div>
-
-<a class="js-skip-button button button--outline">Skip this video</a></div>
-
-</div>
-
-</div>
-
-</main>
-
-<div class="modal fade" id="lab-details-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<div class="modal-body">
-
-In this lab, you create two nginx web servers and control external HTTP access to the web servers using tagged firewall rules. Then, you explore IAM policies and service accounts.
-
-This lab is included in these quests: [Networking in the Google Cloud](/quests/31?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) , [Build and Secure Networks in Google Cloud](/quests/128?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle). If you complete this lab you'll receive credit for it when you enroll in one of these quests.
-
-**Duration:** 0m setup · 60m access · 60m completion
-
-<span>**Levels:** advanced</span>
-
-**Permalink:** [https://google.qwiklabs.com/catalog_lab/1032](https://google.qwiklabs.com/catalog_lab/1032)
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Got It</a></div>
-
-</div>
-
-</div>

@@ -1,8 +1,6 @@
 # HTTP Load Balancer with Cloud Armor
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour</span> <span>7 Credits</span>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 7 Credits
 
 ## GSP215
 
@@ -65,7 +63,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -79,7 +77,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ## Configure HTTP and health check firewall rules
 
@@ -960,185 +958,3 @@ For more information on Load Balancing, see [Load Balancing](https://cloud.googl
 ##### Lab Last Tested November 27, 2020
 
 Copyright 2020 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
-
-</div>
-
-</div>
-
-<div class="hidden js-end-lab-button-container lab-content__end-lab-button"><ql-lab-control-button class="js-end-lab-button" running=""></ql-lab-control-button></div>
-
-<div class="lab-content__renderable-instructions">
-
-<div class="lab-content__recommendation">
-
-<section class="upcoming-cards">
-
-## Continue questing
-
-<div class="content-card-grid">
-
-<div class="card-content-wrapper js-content-card" data-id="1016" data-level="Advanced" data-name="HTTP Load Balancer with Cloud Armor" data-type="Lab">[
-
-<div class="card__body">
-
-<div class="overline card--content__type">Lab</div>
-
-### HTTP Load Balancer with Cloud Armor
-
-<div class="card--content__description body-1">
-
-In this lab, you configure an HTTP Load Balancer with global backends. Then, you stress test the Load Balancer and blacklist the stress test IP with Cloud Armor.
-
-</div>
-
-</div>
-
-<div class="card__footer">
-
-<div class="card__footer__left"><span>Advanced</span></div>
-
-</div>
-
-](/focuses/1232?parent=catalog&qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle)</div>
-
-</div>
-
-</section>
-
-</div>
-
-</div>
-
-</ql-drawer-content><ql-drawer end="" id="outline-drawer" open="" slot="drawer" width="320">
-
-<div class="js-lab-content-outline lab-content__outline">[GSP215](#step1)[Overview](#step2)[Setup and requirements](#step3)[Configure HTTP and health check firewall rules](#step4)[Configure instance templates and create instance groups](#step5)[Configure the HTTP Load Balancer](#step6)[Test the HTTP Load Balancer](#step7)[Denylist the siege-vm](#step8)[Congratulations!](#step9)</div>
-
-</ql-drawer></ql-drawer-container></ql-drawer-content></ql-drawer-container>
-
-<div class="lab-introduction js-lab-introduction is-hidden">
-
-<div class="lab-introduction__inner">
-
-# Welcome to Your First Lab!
-
-<ql-icon-button class="js-skip-button">close</ql-icon-button>
-
-<div class="lab-introduction__video"><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="https://www.youtube.com/embed/yF7EDXKTmoQ?enablejsapi=1&amp;rel=0&amp;showinfo=0"></iframe></div>
-
-<a class="js-skip-button button button--outline">Skip this video</a></div>
-
-</div>
-
-</div>
-
-</main>
-
-<div class="modal fade" id="lab-details-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<div class="modal-body">
-
-In this lab, you configure an HTTP Load Balancer with global backends. Then, you stress test the Load Balancer and blacklist the stress test IP with Cloud Armor.
-
-This lab is included in these quests: [Networking in the Google Cloud](/quests/31?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle) , [Build and Secure Networks in Google Cloud](/quests/128?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle). If you complete this lab you'll receive credit for it when you enroll in one of these quests.
-
-**Duration:** 0m setup · 60m access · 60m completion
-
-<span>**Levels:** advanced</span>
-
-**Permalink:** [https://google.qwiklabs.com/catalog_lab/1016](https://google.qwiklabs.com/catalog_lab/1016)
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Got It</a></div>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="modal fade" id="lab-review-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<form class="simple_form js-lab-review-form" id="new_lab_review" action="/lab_reviews?qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-
-<div class="modal-body">
-
-How satisfied are you with this lab?*
-
-<div class="l-mtm">
-
-<div class="control-group hidden lab_review_user_id">
-
-<div class="controls"><input class="hidden" type="hidden" value="4061609" name="lab_review[user_id]" id="lab_review_user_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_classroom_id">
-
-<div class="controls"><input class="hidden" type="hidden" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_lab_id">
-
-<div class="controls"><input class="hidden" type="hidden" value="1016" name="lab_review[lab_id]" id="lab_review_lab_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_focus_id">
-
-<div class="controls"><input class="hidden" type="hidden" name="lab_review[focus_id]" id="lab_review_focus_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_rating">
-
-<div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div>
-
-</div>
-
-<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">Comment</label>
-
-<div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Cancel</a> <input type="submit" name="commit" value="Submit" disabled="disabled" id="submit" data-disabled="false" class="button" data-disable-with="Submit"></div>
-
-</form>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="modal fade" id="lab-access-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content"><a class="lab-access-modal-close" data-analytics-action="dismissed_lab_payment_modal" data-dismiss="modal">_close_</a>
-
-<form class="js-lab-access-form" action="/lab_onetime_coupons/activate?parent=catalog&amp;qlcampaign=1m-freelabs-456%3Futm_source%3Dgoogle" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-
-<div class="modal-body">
-
-<div class="lab-access-modal"><input type="hidden" name="id" id="id" value="1232"> <input type="hidden" name="user_id" id="user_id" value="4061609"> <input type="hidden" name="launch_with_credits" id="launch_with_credits" value="0" class="js-launch-with-credits-input"> <input type="hidden" name="launch_with_subs" id="launch_with_subs" value="0" class="js-launch-with-subscription-input">
-
-<div class="lab-access-modal__method">
-
-This lab costs 7 Credits.
-
-You have a valid subscription package. Would you like to charge this lab to your subscription?
