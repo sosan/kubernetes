@@ -153,43 +153,24 @@ Create the **managementnet** network using the Cloud Console.
 5.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>managementsubnet-us</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>IP address range</td>
-
     <td>10.130.0.0/20</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 6.  Click **Done**.
@@ -208,7 +189,7 @@ Create the **managementnet** network using the Cloud Console.
 
 Click **Check my progress** to verify your performed task. If you have successfully created a managementnet network, you will see an assessment score.
 
-<ql-activity-tracking step="1">Create the managementnet network</ql-activity-tracking>
+Create the managementnet network
 
 ### **Create the privatenet network**
 
@@ -244,7 +225,7 @@ The output should look like this (**do not copy; this is example output**):
     mynetwork      AUTO         REGIONAL
     privatenet     CUSTOM       REGIONAL
 
-<ql-infobox>**default** and **mynetwork** are auto mode networks, whereas, **managementnet** and **privatenet** are custom mode networks. Auto mode networks create subnets in each region automatically, while custom mode networks start with no subnets, giving you full control over subnet creation</ql-infobox>
+**default** and **mynetwork** are auto mode networks, whereas, **managementnet** and **privatenet** are custom mode networks. Auto mode networks create subnets in each region automatically, while custom mode networks start with no subnets, giving you full control over subnet creation
 
 1.  Run the following command to list the available VPC subnets (sorted by VPC network):
 
@@ -289,7 +270,7 @@ The output should look like this (**do not copy; this is example output**):
     privatesubnet-eu    europe-west1             privatenet     172.20.0.0/20
     privatesubnet-us    us-central1              privatenet     172.16.0.0/24
 
-<ql-infobox>As expected, the **default** and **mynetwork** networks have subnets in [each region](https://cloud.google.com/compute/docs/regions-zones/#available) as they are auto mode networks. The **managementnet** and **privatenet** networks only have the subnets that you created as they are custom mode networks.</ql-infobox>
+As expected, the **default** and **mynetwork** networks have subnets in [each region](https://cloud.google.com/compute/docs/regions-zones/#available) as they are auto mode networks. The **managementnet** and **privatenet** networks only have the subnets that you created as they are custom mode networks.
 
 1.  In the Cloud Console, navigate to **Navigation menu** > **VPC network** > **VPC networks**.
 
@@ -306,70 +287,39 @@ Create firewall rules to allow **SSH**, **ICMP**, and **RDP** ingress traffic to
 3.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
-    <td>managementnet-allow-icmp-ssh-rdp</td>
-
+   <td>managementnet-allow-icmp-ssh-rdp</td>
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>managementnet</td>
-
     </tr>
-
     <tr>
-
     <td>Targets</td>
-
     <td>All instances in the network</td>
-
     </tr>
-
     <tr>
-
     <td>Source filter</td>
-
     <td>IP Ranges</td>
-
     </tr>
-
     <tr>
-
     <td>Source IP ranges</td>
-
     <td>0.0.0.0/0</td>
-
     </tr>
-
     <tr>
-
     <td>Protocols and ports</td>
-
     <td>Specified protocols and ports, and then _check_ tcp, _type:_ 22, 3389; and _check_ Other protocols, _type:_ icmp.</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
-<ql-infobox>Make sure to include the **/0** in the **Source IP ranges** to specify all networks.</ql-infobox>
+Make sure to include the **/0** in the **Source IP ranges** to specify all networks.
 
 1.  Click **command line**.
 
@@ -512,35 +462,20 @@ Create the **managementnet-us-vm** instance using the Cloud Console.
 7.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Network</td>
-
     <td>managementnet</td>
-
     </tr>
-
     <tr>
-
     <td>Subnetwork</td>
-
     <td>managementsubnet-us</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 8.  Click **Done**.
@@ -630,7 +565,7 @@ This should work!
 
 This should work!
 
-<ql-infobox>You are able to ping the external IP address of all VM instances, even though they are either in a different zone or VPC network. This confirms public access to those instances is only controlled by the **ICMP** firewall rules that you established earlier.</ql-infobox>
+You are able to ping the external IP address of all VM instances, even though they are either in a different zone or VPC network. This confirms public access to those instances is only controlled by the **ICMP** firewall rules that you established earlier.
 
 ### Ping the internal IP addresses
 
@@ -646,7 +581,7 @@ Ping the internal IP addresses of the VM instances to determine if you can reach
 
     ping -c 3 <Enter mynet-eu-vm's internal IP here>
 
-<ql-infobox>You are able to ping the internal IP address of **mynet-eu-vm** because it is on the same VPC network as the source of the ping (**mynet-us-vm**), even though both VM instances are in separate zones, regions and continents!</ql-infobox>
+You are able to ping the internal IP address of **mynet-eu-vm** because it is on the same VPC network as the source of the ping (**mynet-us-vm**), even though both VM instances are in separate zones, regions and continents!
 
 1.  To test connectivity to **managementnet-us-vm**'s internal IP, run the following command, replacing **managementnet-us-vm**'s internal IP:
 
@@ -732,7 +667,7 @@ Create the **vm-appliance** instance with network interfaces in **privatesubnet-
 
     </table>
 
-<ql-infobox>The number of interfaces allowed in an instance is dependent on the instance's machine type and the number of vCPUs. The n1-standard-4 allows up to 4 network interfaces. Refer [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#max-interfaces) for more information.</ql-infobox>
+The number of interfaces allowed in an instance is dependent on the instance's machine type and the number of vCPUs. The n1-standard-4 allows up to 4 network interfaces. Refer [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#max-interfaces) for more information.
 
 1.  Click **Management, security, disks, networking, sole tenancy**.
 
@@ -872,7 +807,7 @@ Explore the network interface details of **vm-appliance** within the Cloud Conso
 6.  Click **nic1** and select **nic2**.
 7.  Verify that **nic2** is attached to **mynetwork**, is assigned an internal IP address within that subnet (10.128.0.0/20), and has applicable firewall rules.
 
-<ql-infobox>Each network interface has its own internal IP address so that the VM instance can communicate with those networks.</ql-infobox>
+Each network interface has its own internal IP address so that the VM instance can communicate with those networks.
 
 1.  In the Cloud Console, navigate to **Navigation menu** > **Compute Engine** > **VM instances**.
 
@@ -909,7 +844,7 @@ The output should look like this (**do not copy; this is example output**):
             TX packets 17  bytes 1862 (1.8 KiB)
             TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-<ql-infobox>The **sudo ifconfig** command lists a Linux VM's network interfaces along with the internal IP addresses for each interface.</ql-infobox>
+The **sudo ifconfig** command lists a Linux VM's network interfaces along with the internal IP addresses for each interface.
 
 ### Explore the network interface connectivity
 
@@ -931,7 +866,7 @@ This works!
 
     ping -c 3 privatenet-us-vm
 
-<ql-infobox>You are able to ping **privatenet-us-vm** by its name because VPC networks have an internal DNS service that allows you to address instances by their DNS names rather than their internal IP addresses. When an internal DNS query is made with the instance hostname, it resolves to the primary interface (nic0) of the instance. Therefore, this only works for **privatenet-us-vm** in this case.</ql-infobox>
+You are able to ping **privatenet-us-vm** by its name because VPC networks have an internal DNS service that allows you to address instances by their DNS names rather than their internal IP addresses. When an internal DNS query is made with the instance hostname, it resolves to the primary interface (nic0) of the instance. Therefore, this only works for **privatenet-us-vm** in this case.
 
 1.  To test connectivity to **managementnet-us-vm**'s internal IP, run the following command, replacing **managementnet-us-vm**'s internal IP:
 
@@ -965,7 +900,7 @@ The output should look like this (**do not copy; this is example output**):
     172.16.0.0/24 via 172.16.0.1 dev eth0
     172.16.0.1 dev eth0 scope link
 
-<ql-infobox>The primary interface eth0 gets the default route (default via 172.16.0.1 dev eth0), and all three interfaces eth0, eth1 and eth2 get routes for their respective subnets. Since, the subnet of **mynet-eu-vm** (**10.132.0.0/20**) is not included in this routing table, the ping to that instance leaves **vm-appliance** on eth0 (which is on a different VPC network). You could change this behavior by configuring policy routing as documented [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#configuring_policy_routing).</ql-infobox>
+The primary interface eth0 gets the default route (default via 172.16.0.1 dev eth0), and all three interfaces eth0, eth1 and eth2 get routes for their respective subnets. Since, the subnet of **mynet-eu-vm** (**10.132.0.0/20**) is not included in this routing table, the ping to that instance leaves **vm-appliance** on eth0 (which is on a different VPC network). You could change this behavior by configuring policy routing as documented [here](https://cloud.google.com/vpc/docs/create-use-multiple-interfaces#configuring_policy_routing).
 
 ## Congratulations!
 
