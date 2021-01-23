@@ -434,16 +434,13 @@ The web page will be displayed on the command line, and look like the following 
     </head>
     <body>
       <h1>Hello World</h1>
-
       <p>
         Hello, totally fake email! Your persistent ID is None.
       </p>
-
       <p>
         This is step 2 of the <em>User Authentication with IAP</em>
         codelab.
      </p>
-
     </body>
     </html>
 
