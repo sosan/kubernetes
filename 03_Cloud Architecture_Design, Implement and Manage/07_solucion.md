@@ -3,9 +3,9 @@ export ZONE=us-central1-a
 ```
 
 ```
-gcloud sql instances create wordpress && \
-    --tier=db-n1-standard-1 && \
-    --activation-policy=ALWAYS && \
+gcloud sql instances create wordpress \
+    --tier=db-n1-standard-1 \
+    --activation-policy=ALWAYS \
     --gce-zone $ZONE
 ```
 ```
