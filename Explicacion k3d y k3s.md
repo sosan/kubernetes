@@ -1,5 +1,7 @@
 # K3S y K3D = buena combinacion para el desarrollo en local y tests locales
 
+**Photo by [Massimo Botturi](https://unsplash.com/@wildmax) on [Unsplash](https://unsplash.com/photos/zFYUsLk_50Y?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)**
+
 Trabajar con Kubernetes(K8S) en `maquina local` cuando eres desarrollador o un operador de sistemas no es facil. ¿Como crear un cluster de kubernetes local facilmente? Hay muchas soluciones para utilizar kubernetes en el sistema local, `microk8s`, `minikube`, `k3s`. La que veremos aqui es k3s.
 
 - ¿Y por que un cluster local?
