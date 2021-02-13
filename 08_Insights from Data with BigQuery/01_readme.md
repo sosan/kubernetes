@@ -1,0 +1,205 @@
+# Query 1: Total Confirmed Cases
+
++ Build a query that will answer - What was the total count of confirmed cases on Apr 15, 2020? The query needs to return a single row containing the sum of confirmed cases across all countries. The name of the column should be total_cases_worldwide.
+
+```
+select sum(cumulative_confirmed) as total_cases_worldwide
+from bigquery-public-data.covid19_open_data.covid19_open_data
+where date="2020-04-15"
+```
+
+# Query 2: Worst Affected Areas
++ Build a query for answering - How many states in the US had more than 100 deaths on Apr 10, 2020? The query needs to list the output in the field - count_of_states.
+
+```
+select count(*) as count_of_states
+from (
+
+select subregion1_name as state, sum(cumulative_deceased) as death_count
+from `bigquery-public-data.covid19_open_data.covid19_open_data`
+where country_name = 'United States of America' and date='2020-04-10'
+and subregion1_name is NOT null 
+group by subregion1_name
+)
+where death_count > 100
+```
+
+# Query 3: Identifying Hotspots
++ Build a query that will answer - List all the states in the United States of America that had more than 1000 confirmed cases on Apr 10, 2020? The query needs to return the State Name and the corresponding confirmed cases arranged in descending order. Name of the fields to return - state and total_confirmed_cases.
+
+```
+SELECT * FROM (
+SELECT subregion1_name as state, sum(cumulative_confirmed) as total_confirmed_cases
+FROM `bigquery-public-data.covid19_open_data.covid19_open_data`
+WHERE country_code="US" AND date='2020-04-10' AND subregion1_name is NOT NULL
+GROUP BY subregion1_name
+ORDER BY total_confirmed_cases DESC ) WHERE total_confirmed_cases > 1000
+```
+
+
+# Query 4: Fatality Ratio
++ Build a query for answering - What was the case-fatality ratio in Italy for the month of April 2020? Case-fatality ratio here is defined as (total deaths / total confirmed cases) * 100. Write a query to return the ratio for the month of April 2020 and containing the following fields in the output - total_confirmed_cases, total_deaths, case_fatality_ratio.
+
+```
+select sum(cumulative_confirmed) as total_confirmed_cases, sum(cumulative_deceased) as total_deaths, 
+sum(cumulative_deceased)/sum(cumulative_confirmed) * 100 as case_fatality_ratio
+from  `bigquery-public-data.covid19_open_data.covid19_open_data`
+where country_name="Italy" and date between "2020-04-01" and "2020-04-30"
+```
+
+# Query 5: Build a query for answering
++ Build a query for answering - On what day did the total number of deaths cross 10000 in Italy? The query should return the date in the format : yyyy-mm-dd.
+
+```
+select date 
+from  bigquery-public-data.covid19_open_data.covid19_open_data
+where country_name="Italy" and cumulative_deceased > 10000
+order by date ASC
+limit 1
+```
+
+
+# Query 6
++ The following query is written to identify the number of days in India between 21 Feb 2020 and 15 March 2020 when there were zero increases in the number of confirmed cases. However it is not executing properly. You need to update the query to complete it and obtain the result.
+
+```
+WITH india_cases_by_date AS (
+  SELECT
+    date,
+    SUM(cumulative_confirmed) AS cases
+  FROM
+    `bigquery-public-data.covid19_open_data.covid19_open_data`
+  WHERE
+    country_name="India"
+    AND date between '2020-02-21' and '2020-03-15'
+  GROUP BY
+    date
+  ORDER BY
+    date ASC
+ )
+
+, india_previous_day_comparison AS
+(SELECT
+  date,
+  cases,
+  LAG(cases) OVER(ORDER BY date) AS previous_day,
+  cases - LAG(cases) OVER(ORDER BY date) AS net_new_cases
+FROM india_cases_by_date
+)
+select count(*)
+from india_previous_day_comparison
+where net_new_cases=0
+```
+
+
+
+
+
+# Query 7
++ Using the previous query as a template, write a query to find out the dates on which the confirmed cases increased by more than 10% compared to the previous day (indicating a doubling rate of ~ 7 days) in the US between the dates March 22, 2020 and April 20, 2020. The query needs to return the list of dates, the confirmed cases on that day, the confirmed cases the previous day and the percentage increase in cases between the days. Use the following names for the returned fields: Date, Confirmed_Cases_On_Day, Confirmed_Cases_Previous_Day and Percentage_Increase_In_Cases.
+
+```
+WITH us_cases_by_date AS (
+  SELECT
+    date,
+    SUM(cumulative_confirmed) AS cases
+  FROM
+    `bigquery-public-data.covid19_open_data.covid19_open_data`
+  WHERE
+    country_name="United States of America"
+    AND date between '2020-03-22' and '2020-04-20'
+  GROUP BY
+    date
+  ORDER BY
+    date ASC
+ )
+
+, us_previous_day_comparison AS
+(SELECT
+  date,
+  cases,
+  LAG(cases) OVER(ORDER BY date) AS previous_day,
+  cases - LAG(cases) OVER(ORDER BY date) AS net_new_cases,
+  (cases - lag(cases) over (order by date))*100/lag(cases) over(order by date) as percentage_increase
+
+FROM us_cases_by_date
+)
+select Date, cases as Confirmed_Cases_On_Day, previous_day as Confirmed_Cases_Previous_Day,
+percentage_increase AS Percentage_Increase_In_Cases
+from us_previous_day_comparison
+where percentage_increase > 10
+```
+
+# Query 8:
+
+```
+with cases_by_country as(
+
+	select 
+		country_name as country,
+		sum(cumulative_confirmed) as cases,
+		sum(cumulative_recovered) as recovered_cases,
+	from
+		`bigquery-public-data.covid19_open_data.covid19_open_data`
+	where date = "2020-05-10"
+	group by country_name
+
+),
+recovered_rate as 
+(
+	select country, cases, recovered_cases, (recovered_cases * 100) / cases as recovery_rate from cases_by_country
+)
+select country, cases as confirmed_cases, recovered_cases, recovery_rate
+from recovered_rate
+where cases > 50000
+order by recovery_rate DESC
+limit 10
+```
+
+# Query 9: 
++ The following query is trying to calculate the CDGR on May 10, 2020(Cumulative Daily Growth Rate) for France since the day the first case was reported. The first case was reported on Jan 24, 2020. The CDGR is calculated as:
+
+
+```
+WITH
+  france_cases AS (
+  SELECT
+    date,
+    SUM(cumulative_confirmed) AS total_cases
+  FROM
+    `bigquery-public-data.covid19_open_data.covid19_open_data`
+  WHERE
+    country_name="France"
+    AND date IN ('2020-01-24',
+      '2020-05-10')
+  GROUP BY
+    date
+  ORDER BY
+    date)
+, summary as (
+SELECT
+  total_cases AS first_day_cases,
+  LEAD(total_cases) OVER(ORDER BY date) AS last_day_cases,
+  DATE_DIFF(LEAD(date) OVER(ORDER BY date),date, day) AS days_diff
+FROM
+  france_cases
+LIMIT 1
+)
+
+
+SELECT first_day_cases, last_day_cases, days_diff, pow((last_day_cases/first_day_cases),(1/days_diff))-1 as cdgr
+from summary
+```
+
+# query 10
+
+```
+select 
+	date, sum(cumulative_confirmed) as country_cases, sum(cumulative_deceased) as country_deaths
+from
+    `bigquery-public-data.covid19_open_data.covid19_open_data`
+where
+	date between "2020-03-15" and "2020-04-30"
+	and country_name = "United States of America"
+group by date
+```
