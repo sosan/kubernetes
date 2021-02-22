@@ -83,20 +83,28 @@ Por ejemplo: un plan de capacidad a largo plazo, necesitaremos transformaciones 
 
 # Metodologia de monitorizacion
 
-HAcemos un uso de una combinacion de diferentes metodologias de monitorizacion encima de nuestras metricas. Vamos a combinar elementos de dos metodos diferentes. El uso del metodo USE (Utilizacion, Saturacion, Errores) y el metodo "Google's Four Golden Signal" que se centra en la monitorizacion a nivel de aplicacion. Estas son las dos metodos que combinan para diseñar sistemas de monitorizacion.
+Hacemos un uso de una combinacion de diferentes metodologias de monitorizacion encima de nuestras metricas. Vamos a combinar elementos de dos metodos diferentes. El uso del metodo USE (Utilizacion, Saturacion, Errores) y el metodo "Google's Four Golden Signal" que se centra en la monitorizacion a nivel de aplicacion. Estas son las dos metodos que combinan para diseñar sistemas de monitorizacion.
 
 Cuando estan combinadas uno se centra en la perfomance del servidor y el otro en el performance a nivel de aplicacion. 
 
 - El metodo USE, desarrollado por netflix, propone la creacion de un checklist para el analisis de los servidores que permite identificacion rapido de problemas. Con este identificas problemas comunes de perfomance con los datos que has recolectado. Muy util para monitorizar recursos(cpu, disco, etc...) que sufren problemas de performance sobre grandes cargas(saturacion).
 
-La utilizacion es el tiempo medio que el recurso esta ocupado realizando procesos expresado como porcentaje sobre tiempo.
+  * Utilizacion es el tiempo medio que el recurso esta ocupado realizando procesos expresado como porcentaje sobre tiempo.
 
-La saturacion es el numero de trabajos que no ha podido procesar y por tanto se han quedado en cola, se expresa en el tamaño de la cola y contador de errores.
+  * Saturacion es el numero de trabajos que no ha podido procesar y por tanto se han quedado en cola, se expresa en el tamaño de la cola y contador de errores.
 
-Ejemplo: tenemos un serio problema de perfomance, nuestro checklist contiene vario elementos y los tenemos que recorrer en busca de anomalias. Mirariamos el uso/saturacion/errores de la cpu, uso/saturacion/errores de la memoria, etc...
+  * Errores.
+  
+    Ejemplo: tenemos un serio problema de perfomance, nuestro checklist contiene vario elementos y los tenemos que recorrer en busca de anomalias. Mirariamos el uso/saturacion/errores de la cpu, uso/saturacion/errores de la memoria, etc...
 
 - El metodo "Google's Four Golden Signal" viene del "google sre book" [link libro](https://sre.google/sre-book/monitoring-distributed-systems/) Latencia / Trafico / Errores / Saturacion.
-Latencia es el tiempo que le lleva servir una peticion. Hay que distinguir latencia cuando algo ha salido bien y cuando ha salido mal, una peticion fallido puede tener una latencia muy baja, por ejemplo, simplemente retorna el error muy rapido. El trafico 
+
+  * Latencia: es el tiempo que le toma servir una peticion. Hay que distinguir entre latencia cuando algo ha salido bien y latencia cuando ha salido mal, por ejemplo, una peticion fallida puede tener una latencia muy baja, porque simplemente retorna el error muy rapido.
+
+  * Trafico: es la demanada que tiene tu sistema en un momento dado. Por ejemplo, peticiones HTTP por segundo.
+
+  * Errores: es el numero de errores en un tiempo dado
+  * Saturacion: es como de ocupado esta tu aplicacion o los recursos que estan haciendo que la aplicacion vaya memoria, por ejemplo, memoria.
 
 
 
