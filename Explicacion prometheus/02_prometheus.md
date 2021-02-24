@@ -1,5 +1,6 @@
-Informacion de Prometheus e Instalacion Parte 2
+# Informacion e instalacion Prometheus Parte 2
 
+Imagen de <a href="https://pixabay.com/es/users/blickpixel-52945/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=499792">Michael Schwarzenberger</a> en <a href="https://pixabay.com/es/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=499792">Pixabay</a>
 
 # Pasado de Prometheus
 
@@ -19,7 +20,7 @@ Existen librerias de cliente para muchos lenguajes, frameworks y aplicaciones op
 
 Cada servicio estaria ejecutandose un exporter que va a ser contactado por prometheus para recoger los datos. Si tiene que enviar una alerta, lo hace atraves de un manager de alertas.
 
-![Imagen](./../assets/diagrama_prometheus_arquitectura.svg)
+![Imagen](https://raw.githubusercontent.com/sosan/kubernetes/master/assets/diagrama_prometheus_arquitectura.svg)
 
 # Coleccion de metricas
 
@@ -49,7 +50,7 @@ El formato de almancenamiento de datos esta diseñado para mantener lo mas bajo 
 
 # Redundancia y alta disponibilidad
 
-![Imagen](../assets/diagrama_prometheus_arquitectura_redundancia.svg)
+![Imagen](https://raw.githubusercontent.com/sosan/kubernetes/master/assets/diagrama_prometheus_arquitectura_redundancia.svg)
 
 La redundancia se centra en la resilencia de las alertas mas que en la durabilidad de los datos, se recomienda desplegar servidores prometheus para propuestos especificos y equipos mas que un servidor unico monolitico.
 

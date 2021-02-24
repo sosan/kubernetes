@@ -1,4 +1,4 @@
-# Prometheus (promizius) Parte 1
+# Informacion e instalacion Prometheus Parte 1
 
 **Photo by [Luke Chesser](https://unsplash.com/@lukechesser) on [Unsplash](https://unsplash.com/photos/JKUTrJ4vK00?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)**
 
