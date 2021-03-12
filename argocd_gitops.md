@@ -130,8 +130,25 @@ Resultado:
 ```
 service/argocd-server patched
 ```
-> NOTA: Es posible que segun el entorno no sea posible obtener una ip externa cambiando a LoadBalancer
+> NOTA: Es posible que segun el entorno no sea posible obtener una ip externa cambiando a LoadBalancer 
 
+>      apiVersion: extensions/v1beta1
+>      kind: Ingress
+>      metadata:
+>        name: argocd-server-ingress
+>        namespace: argocd
+>        annotations:
+>          kubernetes.io/ingress.class: nginx
+>          nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+>          nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+>      spec:
+>        rules:
+>        - host: argocd.example.com
+>          http:
+>            paths:
+>            - backend:
+>                serviceName: argocd-server
+>                servicePort: https
 
 
 Ahora concretamente necesitamos la ip del argocd-server, es posible que tengamos que lanzar el comando un par de veces porque tardara un par de segundos aprovisionar una ip externa
@@ -146,9 +163,13 @@ tambien podemos mostrar la ip con el awk
 kubectl get service argocd-server -n n-argocd | awk '{print $4}'
 ```
 
-Ahora necesitamos la contraseña del servidor, el usuario es admin. Bastante recomendable que cambiemos la contraseña desde argocd cli con un `argocd login <ARGOCD_SERVER_IP_OR_URL> && argocd account update-password`
+Ahora necesitamos la contraseña del servidor, el usuario es admin. 
 
-PASSWORD:
+Bastante recomendable que cambiemos la contraseña desde argocd cli. Instalacion del cliente: https://argoproj.github.io/argo-cd/cli_installation/
+
+Desde argocd cli con un `argocd login <ARGOCD_SERVER_IP_OR_URL> && argocd account update-password` cambiamos la contraseña
+
+CONTRASEÑA DE ADMIN:
 ```
 kubectl get pods \
   -n n-argocd \
