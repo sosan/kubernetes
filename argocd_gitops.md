@@ -1,21 +1,22 @@
 He hecho un mini tutorial de gitops con argocd sobre gcp.
 
-He elegido argocd porque tiene una interfaz web, se pueden usar otras herramientas(flux, gitkube, jenkinsx, werf...), cada una tiene un enfoque tirando a mas desarrollador o a mas ingeniero.
+Consideraciones:
+- Se pueden usar otras herramientas(flux, gitkube, jenkinsx, werf...), la instalacion, configuracion, mantenimiento son diferentes.
+- La opcion con mas caracteristicas y pesada es jenkinsx con al menos 3 nodos (6vcpus)
+- NO tiene configurado firewall ni difrentes profundidades de vpc, ni vault, encriptacion de secretos, passwords, envs, etc...
+- Seguridad: https://argoproj.github.io/argo-cd/security_considerations/
+- El cluster va a usar 6GiB de memoria
 
 ```
 gcloud config set compute/region us-east1 && gcloud config set compute/zone us-east1-c
 ```
-
 
 ```
 export PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 echo $PROJECT_ID
 ```
 
-NOTA: NO tiene configurado firewall ni difrentes profundidades de vpc, ni secretos, etc...
-
-
-Tardara unos varios minutos
+Tardara unos varios minutos y consumira unos 3.4GiB
 
 ```
 gcloud container clusters create cluster-test \
@@ -44,10 +45,10 @@ gcloud container clusters get-credentials cluster-test
 ```
 Creacion de namespace
 ```
-kubectl create namespace dev
+kubectl create namespace n-argocd
 ```
 
-```
+<!-- ```
 kubectl create clusterrolebinding cluster-admin-binding \
     --clusterrole cluster-admin \
     --user $(gcloud config get-value account)
@@ -57,17 +58,18 @@ kubectl create clusterrolebinding cluster-admin-binding \
 añadido un firewall, afecta a la red default, conveninete 3 zonas de red
 
 ```
-gcloud compute firewall-rules create devfire \
+gcloud compute firewall-rules create n-argocd-fire \
     --source-ranges=0.0.0.0/0 \
     --target-tags cluster-test \
     --allow=tcp:80 \
     --direction=INGRESS
-```
+``` -->
 
+Antes de lanzar el comando, asegurate que haya sufienciente memoria, ya que los pods no se levantaran si no hay suficiente memoria. Los pods ocuparan unos 2GiB
 ```
-kubectl apply -n dev -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl apply -n n-argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
-Mensajes:
+Resultado:
 
 ```
 customresourcedefinition.apiextensions.k8s.io/applications.argoproj.io created
@@ -82,10 +84,10 @@ role.rbac.authorization.k8s.io/argocd-dex-server created
 ```
 
 
-Listado de los pods en namespace dev. Tardara unos minutos en estar todos los pods ready.
+Listado de los pods en namespace n-argocd. Tardara unos minutos en estar todos los pods ready.
 
 ```
-kubectl get pods -n dev
+kubectl get pods -n n-argocd
 ```
 
 Resultado:
@@ -101,7 +103,7 @@ argocd-server-7fdb567cd4-wrshw        0/1     ContainerCreating   0          2s
 Cuando esten todos ready 1/1, podemos listar los servicios con:
 
 ```
-kubectl get service -n dev
+kubectl get service -n n-argocd
 ```
 
 Resultado:
@@ -120,7 +122,7 @@ argocd-server-metrics   ClusterIP   10.88.7.15     <none>        8083/TCP       
 convertimos argocd-server de clusterip a loadbalancer:
 ```
 kubectl patch svc argocd-server \
-  -n dev \
+  -n n-argocd \
   -p '{"spec": {"type": "LoadBalancer"}}'
 ```
 
@@ -128,25 +130,28 @@ Resultado:
 ```
 service/argocd-server patched
 ```
+> NOTA: Es posible que segun el entorno no sea posible obtener una ip externa cambiando a LoadBalancer
+
+
 
 Ahora concretamente necesitamos la ip del argocd-server, es posible que tengamos que lanzar el comando un par de veces porque tardara un par de segundos aprovisionar una ip externa
 IP EXTERNA:
 ```
-kubectl get svc argocd-server -n dev -o jsonpath="{.status.loadBalancer.ingress[0].ip}" && echo
+kubectl get svc argocd-server -n n-argocd -o jsonpath="{.status.loadBalancer.ingress[0].ip}" && echo
 ```
 
-tambien podemos sacar la ip con el awk
+tambien podemos mostrar la ip con el awk
 
 ```
-kubectl get service argocd-server -n dev | awk '{print $4}'
+kubectl get service argocd-server -n n-argocd | awk '{print $4}'
 ```
 
-Ahora necesitamos la contraseña del servidor, el usuario es admin
+Ahora necesitamos la contraseña del servidor, el usuario es admin. Bastante recomendable que cambiemos la contraseña desde argocd cli con un `argocd login <ARGOCD_SERVER_IP_OR_URL> && argocd account update-password`
 
 PASSWORD:
 ```
 kubectl get pods \
-  -n dev \
+  -n n-argocd \
   -l app.kubernetes.io/name=argocd-server \
   -o "jsonpath={.items[0].metadata.name}" && echo
 ```
