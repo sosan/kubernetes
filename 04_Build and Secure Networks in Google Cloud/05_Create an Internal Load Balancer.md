@@ -1,15 +1,5 @@
 # Create an Internal Load Balancer
 
-<div class="lab-preamble__details subtitle-headline-1"><span>50 minutes</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1250/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
-
 ## GSP216
 
 ![Google Cloud Self-Paced Labs](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
@@ -65,7 +55,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -79,7 +69,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ## Configure HTTP and health check firewall rules
 
@@ -522,11 +512,9 @@ Configure the Internal Load Balancer to balance traffic between the two backends
 2.  Under **TCP Load Balancing**, click on **Start configuration**.
 3.  For **Internet facing or internal only**, select **Only between my VMs**.
 
-<aside class="special">
-
 Choosing **Only between my VMs** makes this Load Balancer internal. This choice requires the backends to be in a single region (us-central1) and does not allow offloading TCP processing to the Load Balancer.
 
-</aside>
+
 
 1.  Click **Continue**.
 
@@ -683,11 +671,9 @@ The output should look like this (**example output**):
     <h1>Internal Load Balancing Lab</h1><h2>Client IP</h2>Your IP address : 10.10.20.50<h2>Hostname</h2>Server Hostname:
      instance-group-1-1zn8<h2>Server Location</h2>Region and Zone: us-central1-a
 
-<aside class="special">
-
 As expected, traffic is forwarded from the Internal Load Balancer (10.10.30.5) to the backend.
 
-</aside>
+
 
 1.  Run the same command a couple more times.
 

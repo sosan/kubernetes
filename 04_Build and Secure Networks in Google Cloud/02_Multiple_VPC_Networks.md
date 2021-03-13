@@ -52,7 +52,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -66,7 +66,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ### Activate Cloud Shell
 
@@ -114,7 +114,7 @@ You can list the project ID with this command:
     [core]
     project = qwiklabs-gcp-44776a13dea667a6
 
-<aside>For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).</aside>
+For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).
 
 ## Create custom mode VPC networks with firewall rules
 
@@ -141,43 +141,24 @@ Create the **managementnet** network using the Cloud Console.
 5.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>managementsubnet-us</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1</td>
-
     </tr>
-
     <tr>
-
     <td>IP address range</td>
-
     <td>10.130.0.0/20</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
 6.  Click **Done**.
@@ -196,7 +177,7 @@ Create the **managementnet** network using the Cloud Console.
 
 Click **Check my progress** to verify your performed task. If you have successfully created a managementnet network, you will see an assessment score.
 
-<ql-activity-tracking step="1">Create the managementnet network</ql-activity-tracking>
+Create the managementnet network
 
 ### **Create the privatenet network**
 
@@ -218,7 +199,7 @@ Create the **privatenet** network using the Cloud Shell command line.
 
 Click **Check my progress** to verify your performed task. If you have successfully created a privatenet network, you will see an assessment score.
 
-<ql-activity-tracking step="2">Create the privatenet network</ql-activity-tracking>
+Create the privatenet network
 
 1.  Run the following command to list the available VPC networks:
 
@@ -371,7 +352,7 @@ Create firewall rules to allow **SSH**, **ICMP**, and **RDP** ingress traffic to
 
 Click **Check my progress** to verify your performed task. If you have successfully created firewall rules for managementnet network, you will see an assessment score.
 
-<ql-activity-tracking step="3">Create the firewall rules for managementnet</ql-activity-tracking>
+Create the firewall rules for managementnet
 
 ### Create the firewall rules for privatenet
 
@@ -390,7 +371,7 @@ The output should look like this (**do not copy; this is example output**):
 
 Click **Check my progress** to verify your performed task. If you have successfully created firewall rules for privatenet network, you will see an assessment score.
 
-<ql-activity-tracking step="4">Create the firewall rules for privatenet</ql-activity-tracking>
+Create the firewall rules for privatenet
 
 1.  Run the following command to list all the firewall rules (sorted by VPC network):
 
@@ -503,7 +484,7 @@ Create the **managementnet-us-vm** instance using the Cloud Console.
 
 Click **Check my progress** to verify your performed task. If you have successfully created VM instance in managementnet network, you will see an assessment score.
 
-<ql-activity-tracking step="5">Create the managementnet-us-vm instance</ql-activity-tracking>
+Create the managementnet-us-vm instance
 
 ### Create the privatenet-us-vm instance
 
@@ -522,7 +503,7 @@ The output should look like this (**do not copy; this is example output**):
 
 Click **Check my progress** to verify your performed task. If you have successfully created VM instance in privatenet network, you will see an assessment score.
 
-<ql-activity-tracking step="6">Create the privatenet-us-vm instance</ql-activity-tracking>
+Create the privatenet-us-vm instance
 
 1.  Run the following command to list all the VM instances (sorted by zone):
 
@@ -804,7 +785,7 @@ Create the **vm-appliance** instance with network interfaces in **privatesubnet-
 
 Click **Check my progress** to verify your performed task. If you have successfully created VM instance with multiple network interfaces, you will see an assessment score.
 
-<ql-activity-tracking step="7">Create a VM instance with multiple network interfaces</ql-activity-tracking>
+Create a VM instance with multiple network interfaces
 
 ### Explore the network interface details
 

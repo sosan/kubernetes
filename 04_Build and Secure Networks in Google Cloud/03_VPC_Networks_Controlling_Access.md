@@ -1,15 +1,5 @@
 # VPC Networks - Controlling Access
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1231/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
-
 ## GSP213
 
 ![Google Cloud Self-Paced Labs](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
@@ -61,7 +51,7 @@ To complete this lab, you need:
 
     **_Tip:_** Open the tabs in separate windows, side-by-side.
 
-    <aside>If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)</aside>
+    If you see the **Choose an account** page, click **Use Another Account**. ![Choose an account](https://cdn.qwiklabs.com/eQ6xPnPn13GjiJP3RWlHWwiMjhooHxTNvzfg1AL2WPw%3D)
 
 3.  In the **Sign in** page, paste the username that you copied from the Connection Details panel. Then copy and paste the password.
 
@@ -75,7 +65,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ### Activate Cloud Shell
 
@@ -123,7 +113,7 @@ You can list the project ID with this command:
     [core]
     project = qwiklabs-gcp-44776a13dea667a6
 
-<aside>For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).</aside>
+For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).
 
 ## Create the web servers
 
@@ -142,43 +132,24 @@ Create the **blue** server with a network tag.
 2.  Set the following values, leave all other values at their defaults:
 
     <table>
-
     <tbody>
-
     <tr>
-
     <th>Property</th>
-
     <th>Value (type value or select option as specified)</th>
-
     </tr>
-
     <tr>
-
     <td>Name</td>
-
     <td>blue</td>
-
     </tr>
-
     <tr>
-
     <td>Region</td>
-
     <td>us-central1 (Iowa)</td>
-
     </tr>
-
     <tr>
-
     <td>Zone</td>
-
     <td>us-central1-a</td>
-
     </tr>
-
     </tbody>
-
     </table>
 
     For more information on available regions and zones, refer [here](https://cloud.google.com/compute/docs/regions-zones/#available).
@@ -191,11 +162,9 @@ Create the **blue** server with a network tag.
 
 5.  For **Network tags**, type **web-server**.
 
-<aside class="special">
-
 **Note:** Networks use network tags to identify which VM instances are subject to certain firewall rules and network routes. Later in this lab, you create a firewall rule to allow HTTP access for VM instances with the **web-server** tag. Alternatively, you could check the **Allow HTTP traffic** checkbox, which would tag this instance as **http-server** and create the tagged firewall rule for tcp:80 for you.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -203,7 +172,7 @@ Create the **blue** server with a network tag.
 
 Click **Check my progress** to verify your performed task. If you have completed the task successfully you will granted with an assessment score.
 
-<ql-activity-tracking step="1">Create the blue server.</ql-activity-tracking>
+Create the blue server.
 
 ### **Create the green server**
 
@@ -259,7 +228,7 @@ Create the **green** server without a network tag.
 
 Click **Check my progress** to verify your performed task. If you have completed the task successfully you will granted with an assessment score.
 
-<ql-activity-tracking step="2">Create the green server.</ql-activity-tracking>
+Create the green server.
 
 ### **Install nginx and customize the welcome page**
 
@@ -333,7 +302,7 @@ The output should contain the following (**do not copy; this is example output**
 
 Click **Check my progress** to verify your performed task. If you have completed the task successfully you will granted with an assessment score.
 
-<ql-activity-tracking step="3">Install Nginx and customize the welcome page.</ql-activity-tracking>
+Install Nginx and customize the welcome page.
 
 ## Create the firewall rule
 
@@ -350,7 +319,7 @@ Create a firewall rule that applies to VM instances with the **web-server** netw
 
 The **default-allow-internal** firewall rule allows traffic on all protocols/ports within the **default** network. You want to create a firewall rule to allow traffic from outside this network to only the **blue** server, by using the network tag **web-server**.
 
-</aside>
+
 
 1.  Click **Create Firewall Rule**.
 
@@ -432,7 +401,7 @@ The **default-allow-internal** firewall rule allows traffic on all protocols/por
 
 Make sure to include the **/0** in the **Source IP ranges** to specify all networks.
 
-</aside>
+
 
 1.  Click **Create**.
 
@@ -440,7 +409,7 @@ Make sure to include the **/0** in the **Source IP ranges** to specify all netwo
 
 Click **Check my progress** to verify your performed task. If you have completed the task successfully you will granted with an assessment score.
 
-<ql-activity-tracking step="4">Create the tagged firewall rule.</ql-activity-tracking>
+Create the tagged firewall rule.
 
 ### Create a test-vm
 
@@ -459,13 +428,13 @@ The output should look like this (**do not copy; this is example output**):
 
 You can easily create VM instances from the Console or the gcloud command line.
 
-</aside>
+
 
 #### Test Completed Task
 
 Click **Check my progress** to verify your performed task. If you have completed the task successfully you will granted with an assessment score.
 
-<ql-activity-tracking step="5">Create a test-vm.</ql-activity-tracking>
+Create a test-vm.
 
 ### Test HTTP connectivity
 
@@ -489,7 +458,7 @@ From **test-vm** `curl` the internal and external IP addresses of **blue** and *
 
 You should see the `Welcome to the green server!` header.
 
-<aside>You are able to HTTP access both servers using their internal IP addresses. The connection on tcp:80 is allowed by the **default-allow-internal** firewall rule, as **test-vm** is on the same VPC network as the web servers **default** network).</aside>
+You are able to HTTP access both servers using their internal IP addresses. The connection on tcp:80 is allowed by the **default-allow-internal** firewall rule, as **test-vm** is on the same VPC network as the web servers **default** network).
 
 1.  To test HTTP connectivity to **blue**'s external IP, run the following command, replacing **blue**'s external IP:
 
@@ -501,19 +470,14 @@ You should see the `Welcome to the green server!` header.
 
     curl -c 3 <Enter green's external IP here>
 
-<aside class="warning">
-
 This should not work! The request hangs.
 
-</aside>
+
 
 1.  Press **CTRL+c** to stop the HTTP request.
 
-<aside class="special">
-
 As expected, you are only able to HTTP access the external IP address of the **blue** server as the **allow-http-web-server** only applies to VM instances with the **web-server** tag.
 
-</aside>
 
 You can verify the same behavior from your browser by opening a new tab and navigating to `http://[External IP of server]`.
 
@@ -543,11 +507,9 @@ The output should look like this (**do not copy; this is example output**):
     ERROR: (gcloud.compute.firewall-rules.list) Some requests did not succeed:
      - Insufficient Permission
 
-<aside class="warning">
-
 This should not work!
 
-</aside>
+
 
 1.  Try to delete the **allow-http-web-server** firewall rule:
 
@@ -560,17 +522,11 @@ The output should look like this (**do not copy; this is example output**):
     ERROR: (gcloud.compute.firewall-rules.delete) Could not fetch resource:
      - Insufficient Permission
 
-<aside class="warning">
-
 This should not work!
-
-</aside>
-
-<aside class="special">
 
 The **Compute Engine default service account** does not have the right permissions to allow you to list or delete firewall rules. The same applies to other users who do not have the right roles.
 
-</aside>
+
 
 ### Create a service account
 
@@ -598,7 +554,7 @@ Create a service account and apply the **Network Admin** role.
 
 Click **Check my progress** to verify your performed task. If you have completed the task successfully you will granted with an assessment score.
 
-<ql-activity-tracking step="6">Create a Network-admin service account.</ql-activity-tracking>
+Create a Network-admin service account.
 
 ### Authorize test-vm and verify permissions
 
@@ -616,11 +572,9 @@ Authorize **test-vm** to use the **Network-admin** service account.
 
     gcloud auth activate-service-account --key-file credentials.json
 
-<aside class="special">
-
 The image you are using has the Cloud SDK pre-installed; therefore, you don’t need to initialize the Cloud SDK. If you are attempting this lab in a different environment, make sure you have followed the [procedures regarding installing the Cloud SDK](https://cloud.google.com/sdk/downloads).
 
-</aside>
+
 
 1.  Try to list the available firewall rules:
 
@@ -648,17 +602,11 @@ The output should look like this (**do not copy; this is example output**):
     ERROR: (gcloud.compute.firewall-rules.delete) Could not fetch resource:
      - Required 'compute.firewalls.delete' permission for 'projects/[PROJECT_ID]/global/firewalls/allow-http-web-server'
 
-<aside class="warning">
-
 This should not work!
-
-</aside>
-
-<aside class="special">
 
 As expected, the **Network Admin** role has permissions to list but not modify/delete firewall rules.
 
-</aside>
+
 
 ### Update service account and verify permissions
 
@@ -703,11 +651,9 @@ The output should look like this (**do not copy; this is example output**):
 
 This should work!
 
-<aside class="special">
-
 As expected, the **Security Admin** role has permissions to list and delete firewall rules.
 
-</aside>
+
 
 ### Verify the deletion of the firewall rule
 
@@ -719,19 +665,15 @@ Verify that you can no longer HTTP access the external IP of the **blue** server
 
     curl -c 3 <Enter blue's external IP here>
 
-<aside class="warning">
-
 This should not work!
 
-</aside>
+
 
 1.  Press **CTRL+c** to stop the HTTP request.
 
-<aside class="warning">
-
 Provide the **Security Admin** role to the right user or service account to avoid any unwanted changes to your firewall rules!
 
-</aside>
+
 
 ## Congratulations!
 
@@ -767,198 +709,10 @@ For information on the basic concepts of Google Cloud Identity and Access Manage
 
 Copyright 2020 Google LLC All rights reserved. Google and the Google logo are trademarks of Google LLC. All other company and product names may be trademarks of the respective companies with which they are associated.
 
-</div>
-
-</div>
-
-<div class="hidden js-end-lab-button-container lab-content__end-lab-button"><ql-lab-control-button class="js-end-lab-button" running=""></ql-lab-control-button></div>
-
-<div class="lab-content__renderable-instructions">
-
-<div class="lab-content__recommendation">
 
 #### Ready for more?
 
 Here's another lab we think you'll like.
 
-<div class="card-content-wrapper js-content-card" data-id="480" data-level="Expert" data-name="Predict Baby Weight with TensorFlow on AI Platform" data-type="Lab">[
-
-<div class="card__body">
-
-<div class="overline card--content__type">Hands-On Lab</div>
-
-### Predict Baby Weight with TensorFlow on AI Platform
-
 In this lab you train, evaluate, and deploy a machine learning model to predict a baby’s weight. You then send requests to the model to make online predictions. This lab is part of a series of labs on processing scientific data.
 
-</div>
-
-<div class="card__footer">
-
-<div class="card__footer__left"><span>Expert</span></div>
-
-</div>
-
-](/focuses/607?parent=catalog)</div>
-
-</div>
-
-</div>
-
-</ql-drawer-content><ql-drawer end="" id="outline-drawer" open="" slot="drawer" width="320">
-
-<div class="js-lab-content-outline lab-content__outline">[GSP213](#step1)[Overview](#step2)[Setup and Requirements](#step3)[Create the web servers](#step4)[Create the firewall rule](#step5)[Explore the Network and Security Admin roles](#step6)[Congratulations!](#step7)</div>
-
-</ql-drawer></ql-drawer-container></ql-drawer-content></ql-drawer-container>
-
-<div class="lab-introduction js-lab-introduction is-hidden">
-
-<div class="lab-introduction__inner">
-
-# Welcome to Your First Lab!
-
-<ql-icon-button class="js-skip-button">close</ql-icon-button>
-
-<div class="lab-introduction__video"><iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" id="lab-introduction" src="https://www.youtube.com/embed/yF7EDXKTmoQ?enablejsapi=1&amp;rel=0&amp;showinfo=0"></iframe></div>
-
-<a class="js-skip-button button button--outline">Skip this video</a></div>
-
-</div>
-
-</div>
-
-</main>
-
-<div class="modal fade" id="lab-details-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<div class="modal-body">
-
-In this lab, you create two nginx web servers and control external HTTP access to the web servers using tagged firewall rules. Then, you explore IAM policies and service accounts.
-
-This lab is included in these quests: [Networking in the Google Cloud](/quests/31) , [Build and Secure Networks in Google Cloud](/quests/128). If you complete this lab you'll receive credit for it when you enroll in one of these quests.
-
-**Duration:** 0m setup · 60m access · 60m completion
-
-<span>**Levels:** advanced</span>
-
-**Permalink:** [https://google.qwiklabs.com/catalog_lab/1032](https://google.qwiklabs.com/catalog_lab/1032)
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Got It</a></div>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="modal fade" id="lab-review-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content">
-
-<form class="simple_form js-lab-review-form" id="new_lab_review" action="/lab_reviews" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-
-<div class="modal-body">
-
-How satisfied are you with this lab?*
-
-<div class="l-mtm">
-
-<div class="control-group hidden lab_review_user_id">
-
-<div class="controls"><input class="hidden" type="hidden" value="4061609" name="lab_review[user_id]" id="lab_review_user_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_classroom_id">
-
-<div class="controls"><input class="hidden" type="hidden" name="lab_review[classroom_id]" id="lab_review_classroom_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_lab_id">
-
-<div class="controls"><input class="hidden" type="hidden" value="1032" name="lab_review[lab_id]" id="lab_review_lab_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_focus_id">
-
-<div class="controls"><input class="hidden" type="hidden" name="lab_review[focus_id]" id="lab_review_focus_id"></div>
-
-</div>
-
-<div class="control-group hidden lab_review_rating">
-
-<div class="controls"><input class="hidden js-rating-input" type="hidden" name="lab_review[rating]" id="lab_review_rating"></div>
-
-</div>
-
-<div class="control-group text optional lab_review_comment"><label class="text optional control-label" for="lab_review_comment">Comment</label>
-
-<div class="controls"><textarea class="text optional" name="lab_review[comment]" id="lab_review_comment"></textarea></div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="modal-actions"><a class="button button--text" data-dismiss="modal">Cancel</a> <input type="submit" name="commit" value="Submit" disabled="disabled" id="submit" data-disabled="false" class="button" data-disable-with="Submit"></div>
-
-</form>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<div class="modal fade" id="lab-access-modal">
-
-<div class="modal-container">
-
-<div class="mdl-shadow--24dp modal-content"><a class="lab-access-modal-close" data-analytics-action="dismissed_lab_payment_modal" data-dismiss="modal">_close_</a>
-
-<form class="js-lab-access-form" action="/lab_onetime_coupons/activate?parent=catalog" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓">
-
-<div class="modal-body">
-
-<div class="lab-access-modal"><input type="hidden" name="id" id="id" value="1231"> <input type="hidden" name="user_id" id="user_id" value="4061609"> <input type="hidden" name="launch_with_credits" id="launch_with_credits" value="0" class="js-launch-with-credits-input"> <input type="hidden" name="launch_with_subs" id="launch_with_subs" value="0" class="js-launch-with-subscription-input">
-
-<div class="lab-access-modal__method">
-
-This lab costs 7 Credits.
-
-You have a valid subscription package. Would you like to charge this lab to your subscription?
-
-<a class="button js-launch-with-subscription-button js-lab-access-modal-button" data-analytics-action="clicked_launch_with_subscription_button">Use Subscription</a></div>
-
-<div class="lab-access-modal__method">
-
-Enter Lab Access Code:
-
-<div class="lab-access-modal__code js-access-code"><input type="text" name="uuid_1" id="uuid_1" value="" maxlength="4" placeholder="1234" class="js-access-code-input"> <input type="text" name="uuid_2" id="uuid_2" value="" maxlength="4" placeholder="1234" class="js-access-code-input"> <input type="text" name="uuid_3" id="uuid_3" value="" maxlength="4" placeholder="1234" class="js-access-code-input"> <input type="text" name="uuid_4" id="uuid_4" value="" maxlength="4" placeholder="1234" class="js-access-code-input"></div>
-
-<a class="button js-launch-with-access-code-button js-lab-access-modal-button" data-analytics-action="clicked_launch_with_access_code_button">Launch with Access Code</a></div>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-<iframe class="l-ie-iframe-fix"></iframe></div>
-
-<script>$( function() { ql.initMaterialInputs(); initChosen(); initSearch(); initTabs(); ql.list.init(); ql.favoriting.init(); ql.header.myAccount.init(); initTooltips(); ql.autocomplete.init(); ql.modals.init(); ql.toggleButtons.init(); ql.analytics.init(); ql.favoriting.init(); ql.labControlPanel.addRecaptchaErrorHandler(); initLabContent(); ql.labOutline.links.init(); initLabReviewModal(); initLabAccessModal(); ql.labAssessment.init(); ql.labIntroduction.init( true ); ql.labData.init(); initLabTranslations( {"are_you_sure":"All done? If you end this lab, you will lose all your work. You may not be able to restart the lab if there is a quota limit. Are you sure you want to end this lab?\n","in_progress":"*In Progress*","ending":"*Ending*","starting":"*Starting, please wait*","end_concurrent_labs":"Sorry, you can only run one lab at a time. To start this lab, please confirm that you want all of your existing labs to end.\n","copied":"Copied","no_resource":"Error retrieving resource.","no_support":"No Support","mac_press":"Press ⌘-C to copy","thanks_review":"Thanks for reviewing this lab.","windows_press":"Press Ctrl-C to copy","days":"days"} ); ql.labRun.init(); ql.chat.init(); ql.initHeader(); ql.navigation.init(); ql.navPanel.init(); ql.navigation.init(); });</script> <style>.mdl-layout__container { position: static }</style>
