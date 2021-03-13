@@ -133,7 +133,7 @@ desde la consola pulsa webpreview
 user: admin
 password = PASSWORD ANTERIOR | o4EAT3qUw0
 
-> PROJECT REPOSITORY: (COPY 6 PASTE)
+> PROJECT REPOSITORY: (COPY & PASTE)
 
 ```
 echo https://source.developers.google.com/p/${PROJECT_ID}/r/valkyrie-app

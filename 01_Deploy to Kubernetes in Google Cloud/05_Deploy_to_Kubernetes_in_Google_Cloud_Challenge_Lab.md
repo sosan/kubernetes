@@ -231,8 +231,6 @@ Copyright 2020 Google LLC All rights reserved. Google and the Google logo are tr
 
 ## Continue questing
 
-[Hands-On Lab]()
-
 ### Deploy to Kubernetes in Google Cloud: Challenge Lab
 
 This challenge lab tests your skills and knowledge from the labs in the Kubernetes in Google Cloud quest. You should be familiar with the content of the labs before attempting this lab.

@@ -1,15 +1,5 @@
 # Continuous Delivery with Jenkins in Kubernetes Engine
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour 15 minutes</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1104/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
-
 ## GSP051
 
 ![Google Cloud Self-Paced Labs](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
@@ -105,7 +95,7 @@ To complete this lab, you need:
 
 After a few moments, the Cloud Console opens in this tab.
 
-<aside>**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)</aside>
+**Note:** You can view the menu with a list of Google Cloud Products and Services by clicking the **Navigation menu** at the top-left. ![Cloud Console Menu](https://cdn.qwiklabs.com/9vT7xPlxoNP%2FPsK0J8j0ZPFB4HnnpaIJVCDByaBrSHg%3D)
 
 ### Activate Cloud Shell
 
@@ -153,7 +143,7 @@ You can list the project ID with this command:
     [core]
     project = qwiklabs-gcp-44776a13dea667a6
 
-<aside>For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).</aside>
+For full documentation of `gcloud` see the [gcloud command-line tool overview](https://cloud.google.com/sdk/gcloud).
 
 ## Clone the repository
 
@@ -186,7 +176,7 @@ This step can take up to several minutes to complete. The extra scopes enable Je
 
 Click **Check my progress** to verify your performed task. If you have successfully created Kubernetes cluster, you'll see an assessment score.
 
-<ql-activity-tracking step="1">Create a Kubernetes cluster (zone: us-east1-d)</ql-activity-tracking>
+Create a Kubernetes cluster (zone: us-east1-d)
 
 Before continuing, confirm that your cluster is running by executing the following command:
 
@@ -226,7 +216,7 @@ This command may take a couple minutes to complete.
 
 Click **Check my progress** to verify your performed task. If you have successfully configure Jenkins chart you will see an assessment score.
 
-<ql-activity-tracking step="2">Configure and Install Jenkins</ql-activity-tracking>
+Configure and Install Jenkins
 
 1.  Once that command completes ensure the Jenkins pod goes to the `Running` state and the container is in the READY state:
 
@@ -319,7 +309,7 @@ Create the production and canary deployments, and the services using the `kubect
 
 Click **Check my progress** to verify your performed task. If you have successfully created deployments you will see an assessment score.
 
-<ql-activity-tracking step="3">Create the production and canary deployments</ql-activity-tracking>
+Create the production and canary deployments
 
 By default, only one replica of the frontend is deployed. Use the `kubectl scale` command to ensure that there are at least 4 replicas running at all times.
 
@@ -339,11 +329,7 @@ Retrieve the external IP for the production services:
 
     kubectl get service gceme-frontend -n production
 
-<aside class="warning">
-
 **Note:** It can take several minutes before you see the load balancer external IP address.
-
-</aside>
 
 **Example Output:**
 
@@ -378,7 +364,7 @@ You can ignore the warning, you will not be billed for this repository.
 
 Click **Check my progress** to verify your performed task. If you have successfully created source repository you will see an assessment score.
 
-<ql-activity-tracking step="4">Create a repository</ql-activity-tracking>
+Create a repository
 
     git init
 

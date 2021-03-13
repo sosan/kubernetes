@@ -266,23 +266,22 @@ And one more time to create and expose the frontend Deployment.
     kubectl create -f deployments/frontend.yaml
     kubectl create -f services/frontend.yaml
 
-<ql-infobox>
+
 
 **Note:** You created a ConfigMap for the frontend.
 
-</ql-infobox>
+
 
 Interact with the frontend by grabbing its external IP and then curling to it.
-
+```
     kubectl get services frontend
-
-<ql-warningbox>
+```
 
 It may take a few seconds before the External-IP field is populated for your service. This is normal. Just re-run the above command every few seconds until the field is populated.
 
-</ql-warningbox>
-
+```
     curl -ks https://<EXTERNAL-IP>
+```
 
 And you get the hello response back.
 
@@ -294,7 +293,7 @@ You can also use the output templating feature of `kubectl` to use curl as a one
 
 Click **Check my progress** below to check your lab progress. If you successfully created Kubernetes cluster and Auth, Hello and Frontend deployments, you'll see an assessment score.
 
-<ql-activity-tracking step="1">Create a Kubernetes cluster and deployments (Auth, Hello, and Frontend)</ql-activity-tracking>
+Create a Kubernetes cluster and deployments (Auth, Hello, and Frontend)
 
 ### Scale a Deployment
 
@@ -306,11 +305,8 @@ The replicas field can be most easily updated using the `kubectl scale` command:
 
     kubectl scale deployment hello --replicas=5
 
-<ql-warningbox>
 
 **Note:** It may take a minute or so for all the new pods to start up.
-
-</ql-warningbox>
 
 After the Deployment is updated, Kubernetes will automatically update the associated ReplicaSet and start new Pods to make the total number of Pods equal 5.
 
@@ -472,7 +468,7 @@ Run this several times and you should see that some of the requests are served b
 
 Click **Check my progress** below to check your lab progress. If you successfully created Canary deployment, you'll see an assessment score.
 
-<ql-activity-tracking step="2">Canary Deployment</ql-activity-tracking>
+Canary Deployment
 
 ### Canary deployments in production - session affinity
 
@@ -503,11 +499,8 @@ Kubernetes achieves this by creating two separate deployments; one for the old "
 
 ![9e624196fdaf4534.png](https://cdn.qwiklabs.com/POW8Q247ZKNY%2ByHIartCsoEu8MAih7k4u1twusCx6pw%3D)
 
-<ql-warningbox>
-
 A major downside of blue-green deployments is that you will need to have at least 2x the resources in your cluster necessary to host your application. Make sure you have enough resources in your cluster before deploying both versions of the application at once.
 
-</ql-warningbox>
 
 ### The service
 
@@ -517,7 +510,7 @@ First update the service:
 
     kubectl apply -f services/hello-blue.yaml
 
-<ql-infobox>**NOTE:** Ignore the warning that says `resource service/hello is missing` as this is patched automatically.</ql-infobox>
+**NOTE:** Ignore the warning that says `resource service/hello is missing` as this is patched automatically.
 
 ### Updating using Blue-Green Deployment
 

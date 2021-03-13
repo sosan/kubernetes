@@ -219,7 +219,7 @@ Navigate to and list the version2 examples:
 
     frontend.py  frontend.py.schema  nodejs.py  nodejs.py.schema  nodejs.yaml
 
-The main deployment manager configuration file is `nodejs.yaml`. It makes use of templates to generate infrastructure. The rest of the files are templates. Templates use variables defined in the `nodejs`.`yaml` configuration file to produce customized results.
+The main deployment manager configuration file is `nodejs.yaml`. It makes use of templates to generate infrastructure. The rest of the files are templates. Templates use variables defined in the `nodejs.yaml` configuration file to produce customized results.
 
 ![bb0ba9fa2750ba43.png](https://cdn.qwiklabs.com/40UqXM4XpfPlZ%2BOQWaVadL5q1cNctNoC2OHvAS3pxsw%3D)
 

@@ -1,14 +1,6 @@
 # Orchestrating the Cloud with Kubernetes
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour 15 minutes</span> <span>9 Credits</span>
-
-<div class="lab__rating">[](/focuses/557/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
+1 hour 15 minutes 9 Credits
 
 ## GSP021
 
@@ -24,16 +16,12 @@ In this lab you will learn how to:
 
 Kubernetes is all about applications. In this part of the lab you will use an example application called "app".
 
-<ql-infobox>
-
 [App](https://github.com/kelseyhightower/app) is hosted on GitHub and provides an example 12-Factor application. During this lab you will be working with the following Docker images:
 
 *   [kelseyhightower/monolith](https://hub.docker.com/r/kelseyhightower/monolith) - Monolith includes auth and hello services.
 *   [kelseyhightower/auth](https://hub.docker.com/r/kelseyhightower/auth) - Auth microservice. Generates JWT tokens for authenticated users.
 *   [kelseyhightower/hello](https://hub.docker.com/r/kelseyhightower/hello) - Hello microservice. Greets authenticated users.
 *   [nginx](https://hub.docker.com/_/nginx) - Frontend to the auth and hello services.
-
-</ql-infobox>
 
 ![9f35a311fce0abdc.png](https://cdn.qwiklabs.com/dWikgXRFOQhNfHmIPA3rIhKjAkdw9BZ54wzShfeYvKg%3D)
 
@@ -204,11 +192,7 @@ List our services now using the `kubectl get` services command:
 
     kubectl get services
 
-<ql-infobox>
-
 **Note:** It may take a few seconds before the `ExternalIP` field is populated for your service. This is normal -- just re-run the `kubectl get services` command every few seconds until the field populates.
-
-</ql-infobox>
 
 Add the External IP to this command to hit the Nginx container remotely:
 
@@ -220,7 +204,7 @@ And there you go! Kubernetes supports an easy to use workflow out of the box usi
 
 Click **Check my progress** below to check your lab progress. If you successfully created Kubernetes cluster and deploy Nginx container, you'll see an assessment score.
 
-<ql-activity-tracking step="1">Create a Kubernetes cluster and launch Nginx container</ql-activity-tracking>
+Create a Kubernetes cluster and launch Nginx container
 
 Now that you've seen a quick tour of kubernetes, it's time to dive into each of the components and abstractions.
 
@@ -286,11 +270,7 @@ Examine your pods. Use the `kubectl get pods` command to list all pods running i
 
     kubectl get pods
 
-<ql-infobox>
-
 **Note:** It may take a few seconds before the monolith pod is up and running. The monolith container image needs to be pulled from the Docker Hub before we can run it.
-
-</ql-infobox>
 
 Once the pod is running, use `kubectl` `describe` command to get more information about the monolith pod:
 
@@ -304,11 +284,7 @@ Kubernetes makes it easy to create pods by describing them in configuration file
 
 By default, pods are allocated a private IP address and cannot be reached outside of the cluster. Use the `kubectl port-forward` command to map a local port to a port inside the monolith pod.
 
-<ql-infobox>
-
 From this point on the lab will ask you to work in multiple cloud shell tabs to set up communication between the pods. Any commands that are executed in a second or third command shell will be denoted in the command's instructions.
-
-</ql-infobox>
 
 Open a second Cloud Shell terminals. One to run the `kubectl port-forward` command, and the other to issue `curl` commands.
 
@@ -456,7 +432,7 @@ Use the `kubectl create` command to create the monolith service from the monolit
 
 Click **Check my progress** below to check your lab progress. If you successfully created Monolith pods and service, you'll see an assessment score.
 
-<ql-activity-tracking step="2">Create Monolith pods and service</ql-activity-tracking>
+Create Monolith pods and service
 
 You're using a port to expose the service. This means that it's possible to have port collisions if another app tries to bind to port 31000 on one of your servers.
 
@@ -471,7 +447,7 @@ Use the `gcloud compute firewall-rules` command to allow traffic to the monolith
 
 Click **Check my progress** below to check your lab progress. If you successfully created firewall rule to allow TCP traffic on 31000 port, you'll see an assessment score.
 
-<ql-activity-tracking step="3">Allow traffic to the monolith service on the exposed nodeport</ql-activity-tracking>
+Allow traffic to the monolith service on the exposed nodeport
 
 Now that everything is setup you should be able to hit the secure-monolith service from outside the cluster without using port forwarding.
 
@@ -539,7 +515,7 @@ Bam! Houston, we have contact.
 
 Click **Check my progress** below to check your lab progress. If you successfully added label to monolith pods, you'll see an assessment score.
 
-<ql-activity-tracking step="4">Adding Labels to Pods</ql-activity-tracking>
+Adding Labels to Pods
 
 ## Deploying Applications with Kubernetes
 
@@ -621,11 +597,8 @@ And one more time to create and expose the frontend Deployment.
     kubectl create -f deployments/frontend.yaml
     kubectl create -f services/frontend.yaml
 
-<ql-infobox>
 
 There is one more step to creating the frontend because you need to store some configuration data with the container.
-
-</ql-infobox>
 
 Interact with the frontend by grabbing it's External IP and then curling to it:
 
@@ -638,7 +611,7 @@ And you get a hello response back!
 
 Click **Check my progress** below to check your lab progress. If you successfully created Auth, Hello and Frontend deployments, you'll see an assessment score.
 
-<ql-activity-tracking step="5">Creating Deployments (Auth, Hello and Frontend)</ql-activity-tracking>
+Creating Deployments (Auth, Hello and Frontend)
 
 ## Conclusion
 

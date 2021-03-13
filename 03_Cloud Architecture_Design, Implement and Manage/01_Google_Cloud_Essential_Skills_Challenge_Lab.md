@@ -1,16 +1,4 @@
-<div class="lab-preamble">
-
 # Google Cloud Essential Skills: Challenge Lab
-
-<div class="lab-preamble__details subtitle-headline-1"><span>45 minutes</span> <span>5 Credits</span>
-
-<div class="lab__rating">[](/focuses/1734/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
 
 ## GSP101
 

@@ -1,15 +1,5 @@
 # Multiple VPC Networks
 
-<div class="lab-preamble__details subtitle-headline-1"><span>1 hour 10 minutes</span> <span>7 Credits</span>
-
-<div class="lab__rating">[](/focuses/1230/reviews?parent=catalog)<a data-target="#lab-review-modal" data-toggle="modal">Rate Lab</a></div>
-
-</div>
-
-</div>
-
-<div class="js-markdown-instructions markdown-lab-instructions" id="markdown-lab-instructions">
-
 ## GSP211
 
 ![Google Cloud Self-Paced Labs](https://cdn.qwiklabs.com/GMOHykaqmlTHiqEeQXTySaMXYPHeIvaqa2qHEzw6Occ%3D)
